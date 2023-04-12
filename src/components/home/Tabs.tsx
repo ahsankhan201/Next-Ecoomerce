@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./../../styles/Home.module.css";
+import styles from "./../../styles/Home.module.scss";
 import { menuData } from "@/constants/staticData";
 const tabs = [
   { label: "Tab 1", content: "This is the content for tab 1." },

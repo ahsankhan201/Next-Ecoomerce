@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import styles from "../../../ecommerce/src/styles/mainNavBar.module.css";
+import styles from "../styles/mainNavBar.module.scss";
 import { Dropdown, TriggerTypes } from "@nextui-org/react";
 import { menuData, shooping } from "@/constants/staticData";
 const MainNavBar = () => {

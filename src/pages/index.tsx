@@ -1,7 +1,7 @@
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 import { SliderImages, SliderImagesBanner } from "@/constants/staticData";
 import Card from "@/components/home/Card";
 import Slider from "@/utils/Slider";
@@ -25,7 +25,7 @@ export default function Home() {
 
       <div className={styles.cardcontainer}>
         {SliderImagesBanner.map((item: SliderInterface, index: number) => {
-          return <Card imageUrl={item.image} title={item.title} />;
+          return <Card imageUrl={item.image} key={index} title={item.title} />;
         })}
       </div>
       <div>

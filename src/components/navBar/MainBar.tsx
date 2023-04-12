@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../src/styles/navBar.module.css";
+import styles from "../../../src/styles/navBar.module.scss";
 import Link from "next/link";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 

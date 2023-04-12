@@ -1,7 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
-import styles from "../../../src/styles/searchNav.module.css";
+import styles from "../../../src/styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
 

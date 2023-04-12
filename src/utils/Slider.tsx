@@ -1,7 +1,7 @@
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Slider.module.css";
+import styles from "@/styles/Slider.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
