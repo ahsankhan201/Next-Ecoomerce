@@ -5,7 +5,7 @@ import Layout from "@/components/layout/Layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-  <NextUIProvider>
+    <NextUIProvider>
       <Layout>
         <Component {...pageProps} />
       </Layout>

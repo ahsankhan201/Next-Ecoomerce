@@ -1,57 +1,198 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/mainNavBar.module.scss";
-import { Dropdown, TriggerTypes } from "@nextui-org/react";
-import { menuData, shooping } from "@/constants/staticData";
+
+import {
+  EidCollection2023,
+  menuData,
+  Accessories,
+  ShopByBrand,
+} from "@/constants/staticData";
 const MainNavBar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowMenu(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowMenu(false);
+  };
+
   return (
     <div>
       <nav className={styles.navbar}>
         <ul className={styles.navbar__list}>
-          <li className={styles.navbar__item}>
-            {/* <Link href="/">SALE</Link> */}
-            <div>
-              <Dropdown>
-                <Dropdown.Button flat color="secondary">
-                  SALE
-                </Dropdown.Button>
-                <Dropdown.Menu color="secondary" aria-label="Actions">
-                  {menuData.map((item: any) => (
-                    <Dropdown.Item key={item.id}>{item.title}</Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-              ;
-            </div>
+          <li
+            className={styles.navbar__item}
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link href="/">Sale</Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                {menuData.map((item: any, index) => {
+                  return (
+                    <li className={styles.submenu__item} key={index}>
+                      <Link href="/collection/SummerCollection">
+                        {item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
-          <li className={styles.navbar__item}>
-            <div>
-              <Dropdown>
-                <Dropdown.Button flat color="secondary">
-                  EID COLLECTION 2023
-                </Dropdown.Button>
-                <Dropdown.Menu color="secondary" aria-label="Actions">
-                  {shooping.map((item: any) => (
-                    <Dropdown.Item key={item.id}>{item.title}</Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
+          <li
+            className={styles.navbar__item}
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link href="/">Eid Collection 2023</Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                {EidCollection2023.map((item: any, index) => {
+                  return (
+                    <li className={styles.submenu__item} key={index}>
+                      <Link href="/">{item.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
-          <li className={styles.navbar__item}>
+          <li
+            className={styles.navbar__item}
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <Link href="/">MEN</Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                <div className={styles.flexContainerOfNavBar}>
+                  <div>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Shirts</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Pants</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Shoes</Link>
+                    </li>
+                  </div>
+                  <div>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Accessories</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Bluetooth</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Handfree</Link>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            )}
+          </li>
+          <li
+            className={styles.navbar__item}
+            onMouseOver={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link href="/">Women</Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                <div className={styles.flexContainerOfNavBar}>
+                  <div>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Shirts12</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Pants</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Shoes</Link>
+                    </li>
+                  </div>
+                  <div>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Accessories</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Bluetooth</Link>
+                    </li>
+                    <li className={styles.submenu__item}>
+                      <Link href="/">Handfree</Link>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            )}
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/">WOMEN</Link>
+            <Link
+              href="/"
+              className={styles.navbar__item}
+              onMouseOver={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              KIDS
+            </Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                {EidCollection2023.slice(2).map((item: any, index) => {
+                  return (
+                    <li className={styles.submenu__item} key={index}>
+                      <Link href="/">{item.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/">KIDS</Link>
+            <Link
+              href="/"
+              className={styles.navbar__item}
+              onMouseOver={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              ACCESSORIES
+            </Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                {Accessories.map((item: any, index) => {
+                  return (
+                    <li className={styles.submenu__item} key={index}>
+                      <Link href="/">{item.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
           <li className={styles.navbar__item}>
-            <Link href="/">ACCESSORIES</Link>
-          </li>
-          <li className={styles.navbar__item}>
-            <Link href="/">SHOP BY BRAND</Link>
+            <Link
+              href="/"
+              className={styles.navbar__item}
+              onMouseOver={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              SHOP BY BRAND
+            </Link>
+            {showMenu && (
+              <ul className={styles.submenu}>
+                {ShopByBrand.map((item: any, index) => {
+                  return (
+                    <li className={styles.submenu__item} key={index}>
+                      <Link href="/">{item.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </li>
           <li className={styles.navbar__item}>
             <Link href="/">CUSTOMER REVIEWS</Link>

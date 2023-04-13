@@ -6,8 +6,10 @@ import { SliderImages, SliderImagesBanner } from "@/constants/staticData";
 import Card from "@/components/home/Card";
 import Slider from "@/utils/Slider";
 import { SliderInterface } from "@/interface/Interfaces";
-import Tabs from "@/components/home/Tabs";
-import { useState } from "react";
+import TopSallers from "@/components/topSallers/TopSallers";
+import MegaDiscount from "@/components/megaDiscount/MegaDiscount";
+import AllBrands from "@/components/home/brands/AllBrands";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -20,17 +22,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Slider SliderImages={SliderImages} />
+        <div className={styles.fisrtSlideContainer}>
+          <Slider SliderImages={SliderImages} />
+        </div>
+        <div className={styles.cardcontainer}>
+          {SliderImagesBanner.map((item: SliderInterface, index: number) => {
+            return (
+              <Card
+                key={index}
+                item={item}
+              />
+            );
+          })}
+        </div>
+        <div className={styles.fisrtSlideContainer}>
+          <TopSallers />
+        </div>
+        <div>
+          <MegaDiscount />
+          <AllBrands />
+        </div>
       </main>
-
-      <div className={styles.cardcontainer}>
-        {SliderImagesBanner.map((item: SliderInterface, index: number) => {
-          return <Card imageUrl={item.image} key={index} title={item.title} />;
-        })}
-      </div>
-      <div>
-        <Tabs />
-      </div>
     </>
   );
 }

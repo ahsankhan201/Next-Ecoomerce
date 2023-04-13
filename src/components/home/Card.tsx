@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import styles from "./../../styles/Home.module.scss";
 
 interface Props {
-  imageUrl: string;
-  title: string;
+  item: any;
 }
 
-const Card = ({ imageUrl, title }: Props) => {
+const Card = ({ item }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -18,15 +17,34 @@ const Card = ({ imageUrl, title }: Props) => {
   };
 
   return (
-    <div
-      className={styles.card}
-      style={{ backgroundImage: `url(${imageUrl})` }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-      <div className={`${styles.cardContent} ${hovered ? styles.active : ""}`}>
-        <h2 className={styles.cardBnenrHeading}>{title}</h2>
+    <>
+      <div
+        className={styles.card}
+        style={{ backgroundImage: `url(${item.image})` }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {item.spotlight ? null : (
+          <div
+            className={`${styles.cardContent} ${hovered ? styles.active : ""}`}
+          >
+            <h2 className={styles.cardBnenrHeading}>{item.title}</h2>
+          </div>
+        )}
+        <div>
+        {item?.spotlight ? (
+          <div className={styles.spotlight}>
+            <p>{item.category}</p>
+            <p>{item.titleBottom}</p>
+          </div>
+        ) : (
+          ""
+        )}
+
+        </div>
       </div>
-    </div>
+
+    </>
   );
 };
 
