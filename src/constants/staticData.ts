@@ -314,35 +314,149 @@ export const brandsImages = [
   },
   {
     id: "3",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjT39GF5q3JqmKsIknVfcCNjchqHETlBkSqe0hjuY1LFyopQfWKBOj1QqFhm-cF2P2X9k&usqp=CAU",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjT39GF5q3JqmKsIknVfcCNjchqHETlBkSqe0hjuY1LFyopQfWKBOj1QqFhm-cF2P2X9k&usqp=CAU",
   },
 ];
 
-
-export const SpotlightData=[
+export const SpotlightData = [
   {
     id: "1",
-    spotlight:true,
+    spotlight: true,
     image:
-    "https://cdn.shopify.com/s/files/1/0262/5804/7069/collections/Calza.png?v=1583492578",
-    category:"Womens Wheels",
-    titleBottom:"Shop Now"
+      "https://cdn.shopify.com/s/files/1/0262/5804/7069/collections/Calza.png?v=1583492578",
+    category: "Womens Wheels",
+    titleBottom: "Shop Now",
   },
   {
     id: "2",
     image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtGSUpyeajgZZ5nPBsHcFIYYB-l6dZkNHngQ&usqp=CAU",
-    category:"Mens Wheels",
-    titleBottom:"Shop Now",
-    spotlight:true,
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtGSUpyeajgZZ5nPBsHcFIYYB-l6dZkNHngQ&usqp=CAU",
+    category: "Mens Wheels",
+    titleBottom: "Shop Now",
+    spotlight: true,
   },
   {
     id: "3",
     image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FwuJdCl3puyI94LeW1jmUgTI9NY9YYlarbNfGBXduOuoalzoEZhaL9Rfs7wzCS5p21A&",
-    category:"Kids Wheels",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FwuJdCl3puyI94LeW1jmUgTI9NY9YYlarbNfGBXduOuoalzoEZhaL9Rfs7wzCS5p21A&",
+    category: "Kids Wheels",
 
-    titleBottom:"Shop Now",
-    spotlight:true,
-  }
-]
+    titleBottom: "Shop Now",
+    spotlight: true,
+  },
+];
+
+export const navMenu = [
+  {
+    id: "1",
+    title: "Sale",
+
+    subMenu: [
+      {
+        title: "MENS",
+        id: "Mens",
+      },
+      {
+        title: "WOMENS",
+        id: "Womens",
+      },
+      {
+        title: "KIDS",
+        id: "Kids",
+      },
+      {
+        title: "ACCESSORIES",
+        id: "Accessories",
+      },
+    ],
+  },
+  {
+    id: "2",
+    title: "Eid Collection 2023",
+
+    subMenu: [
+      {
+        title: "MEN",
+        id: "Men",
+      },
+      {
+        title: "WOMEN",
+        id: "Women",
+      },
+      {
+        title: "Girls",
+        id: "Girls",
+      },
+      {
+        title: "Boys",
+        id: "Boys",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Men",
+    link: "/",
+    subMenu: [
+      {
+        title: "Shoes",
+        id: "Shoes", 
+      }
+    ]
+  },
+  {
+    id: "3",
+    title: "Kids",
+    link: "/",
+    subMenu: [
+      {
+        title: "Girls",
+        id: "Girls",
+      },
+      {
+        title: "Boys",
+        id: "Boys",
+      },
+    ],
+  },
+  {
+    id: "4",
+    title: "Accessories",
+    link: "/",
+    subMenu: [
+      {
+        id: "Womens Accessories",
+        title: "Womens Accessories",
+      },
+      {
+        id: "Mens Accessories",
+        title: "Mens Accessories",
+      },
+    ],
+  },
+  {
+    id: "5",
+    title: "SHOP BY BRAND",
+    link: "/",
+    subMenu: [
+      {
+        id: "NDURE",
+        title: "NDURE",
+      },
+      {
+        id: "Liza",
+        title: "Liza",
+      },
+      {
+        id: "Calza",
+        title: "Calza",
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "CUSTOMER REVIEWS",
+    link: "/",
+  },
+];

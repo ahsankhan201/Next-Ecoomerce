@@ -1,6 +1,6 @@
 import React from "react";
-import { SpotlightData, brandsImages } from "@/constants/staticData";
-import styles from "@/styles/Home.module.scss";
+import { SpotlightData, brandsImages } from "../../../constants/staticData";
+import styles from "../../../styles/Home.module.scss";
 import Card from "../Card";
 const AllBrands = () => {
   return (

@@ -5,7 +5,7 @@ import {
   menuData,
   SliderImagesBanner,
   topSallerData,
-} from "@/constants/staticData";
+} from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
 
 const TopSallers = () => {

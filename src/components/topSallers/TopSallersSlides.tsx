@@ -1,5 +1,5 @@
 import "keen-slider/keen-slider.min.css";
-import styles from "@/styles/Home.module.scss";
+import styles from "../../styles/Home.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";

@@ -1,15 +1,14 @@
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.scss";
-import { SliderImages, SliderImagesBanner } from "@/constants/staticData";
-import Card from "@/components/home/Card";
-import Slider from "@/utils/Slider";
-import { SliderInterface } from "@/interface/Interfaces";
-import TopSallers from "@/components/topSallers/TopSallers";
-import MegaDiscount from "@/components/megaDiscount/MegaDiscount";
-import AllBrands from "@/components/home/brands/AllBrands";
-
+import styles from "../styles/Home.module.scss";
+import { SliderImages, SliderImagesBanner } from "../constants/staticData";
+import Card from "../components/home/Card";
+import Slider from "../utils/Slider";
+import { SliderInterface } from "../interface/Interfaces";
+import TopSallers from "../components/topSallers/TopSallers";
+import MegaDiscount from "../components/megaDiscount/MegaDiscount";
+import AllBrands from "../components/home/brands/AllBrands";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
