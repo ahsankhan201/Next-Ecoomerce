@@ -14,7 +14,6 @@ describe("Card component", () => {
   test("renders spotlight content if item is a spotlight", () => {
     // Defining the test case
     const spotlightItem = {
-      // Creating a mock spotlight item for testing
       id: 2,
       category: "Spotlight Category",
       titleBottom: "Spotlight Title",
