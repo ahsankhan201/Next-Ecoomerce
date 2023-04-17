@@ -23,6 +23,7 @@ const Card = ({ item }: Props) => {
         style={{ backgroundImage: `url(${item.image})` }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        data-testid="card"
       >
         {item.spotlight ? null : (
           <div

@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
 import TopSallersSlides from "./TopSallersSlides";
-import {
-  SliderImages,
-  menuData,
-  SliderImagesBanner,
-  topSallerData,
-} from "../../constants/staticData";
+import { CircularProgress } from "@mui/material";
+import { menuData, topSallerData } from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
 
 const TopSallers = () => {
-  const [activeTab, setActiveTab] = useState<any>('MENS');
+  const [activeTab, setActiveTab] = useState<any>("MENS");
   const [slidesData, setSlidesData] = useState<any>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const filterData =  () => {
-    const filteredTopSallerData =  topSallerData.filter((item) => {
+  const filterData = () => {
+    const filteredTopSallerData = topSallerData.filter((item) => {
       const category = item.category.toLowerCase();
-      console.log("category", category,activeTab.toLowerCase())
       return category.includes(activeTab.toLowerCase());
     });
     setSlidesData(filteredTopSallerData);
@@ -26,6 +22,11 @@ const TopSallers = () => {
   }, [activeTab]);
   return (
     <>
+      {loading && (
+        <div className={styles.loader}>
+          <CircularProgress />
+        </div>
+      )}
       <h3 className={styles.eachSectionHeading}>TopSallers</h3>
       <div className={styles.tabContainer}>
         <div className={styles.tablabels}>
@@ -40,8 +41,9 @@ const TopSallers = () => {
           ))}
         </div>
       </div>
-      {console.log("slidesData", slidesData)}
-      {slidesData.length > 0 && <TopSallersSlides topSallerData={slidesData} activeTab={activeTab} />}
+      {slidesData.length > 0 && (
+        <TopSallersSlides topSallerData={slidesData} activeTab={activeTab} />
+      )}
     </>
   );
 };

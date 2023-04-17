@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../home/Card";
-import { SliderImagesBanner, MegaDiscountDela, SpotlightData } from "../../constants/staticData";
+import { MegaDiscountDela } from "../../constants/staticData";
 import { SliderInterface } from "../../interface/Interfaces";
 import styles from "../../styles/Home.module.scss";
 
