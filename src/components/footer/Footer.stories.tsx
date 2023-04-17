@@ -14,7 +14,6 @@ Default.args = {};
 
 
 
-
 export const Colored = Template.bind({});
 Colored.args = {
   textColor: "red",

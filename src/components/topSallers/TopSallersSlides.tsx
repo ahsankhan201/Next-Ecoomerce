@@ -4,7 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const TopSallersSlides = ({ topSallerData, activeTab }: any) => {
+const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
   console.log("topSallerData", activeTab);
 
   const [loaded1, setLoaded1] = useState(false);
@@ -26,9 +26,6 @@ const TopSallersSlides = ({ topSallerData, activeTab }: any) => {
     },
   });
 
-  
-
-
   const SallerhandlePrevClick = () => {
     if (instanceRef1.current) {
       instanceRef1.current.prev();
@@ -40,46 +37,54 @@ const TopSallersSlides = ({ topSallerData, activeTab }: any) => {
       instanceRef1.current.next();
     }
   };
+
   return (
     <>
-      <div
-        ref={sliderRef1}
-        className="keen-slider"
-        style={{ position: "relative", margin: "10px 0px" }}
-      >
-        {topSallerData.map((slides: any, index: number) => {
-          return (
-            <div key={index} className="keen-slider__slide number-slide1">
-              <img
-                src={slides.image}
-                alt="image"
-                className={styles.TabsliderImg}
-              />
-              <div>
-                <p>{slides.brand}</p>
-                <p>{slides.description}</p>
-                <p>Rs.{slides.price}</p>
+      {topSallerData.length == 0 && loading == false ? (
+        <div className={styles.loader}>No Data Found</div>
+      ) : null}
+
+      {loading == true ? (
+        <div className={styles.loader}>Loading Please Wait</div>
+      ) : (
+        <div
+          ref={sliderRef1}
+          className="keen-slider"
+          style={{ position: "relative", margin: "10px 0px" }}
+        >
+          {topSallerData.map((slides: any, index: number) => {
+            return (
+              <div key={index} className="keen-slider__slide number-slide1">
+                <img
+                  src={slides.image}
+                  alt="image"
+                  className={styles.TabsliderImg}
+                />
+                <div>
+                  <p>{slides.brand}</p>
+                  <p>{slides.description}</p>
+                  <p>Rs.{slides.price}</p>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-      {loaded1 && (
-        <div className={styles.topSallerControler}>
-          <button
-            onClick={SallerhandlePrevClick}
-            className={styles.sliderControlsPrevious1}
-          >
-            <FaArrowLeft />
-          </button>
-          <button
-            onClick={SallerhandleNextClick}
-            className={styles.sliderControlsNext1}
-          >
-            <FaArrowRight />
-          </button>
+            );
+          })}
         </div>
       )}
+
+      <div className={styles.topSallerControler}>
+        <button
+          onClick={SallerhandlePrevClick}
+          className={styles.sliderControlsPrevious1}
+        >
+          <FaArrowLeft />
+        </button>
+        <button
+          onClick={SallerhandleNextClick}
+          className={styles.sliderControlsNext1}
+        >
+          <FaArrowRight />
+        </button>
+      </div>
     </>
   );
 };

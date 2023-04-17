@@ -12,6 +12,39 @@ const Template: FunctionComponent<{ args: any }> = (args) => <SearchNav {...args
 export const Default = Template.bind({});
 Default.args = {};
 
+
+export const HeadingCenter = () => (
+  <SearchNav
+    title="Shoe Market"
+    textColor="black"
+    fontSize="2rem"
+    searchText="Search for shoes"
+  />
+);
+
+
+
+export const SearchAndAddToCart = () => (
+  <SearchNav
+    title="Shoe Market"
+    textColor="black"
+    fontSize="1.5rem"
+    searchText="Search for shoes"
+  />
+);
+
+export const DifferentOptions = () => (
+  <SearchNav
+    title="Shoe Market"
+    textColor="black"
+    fontSize="1rem"
+    searchText="Search for shoes"
+  />
+);
+
+// export { HeadingCenter, SearchAndAddToCart, DifferentOptions };
+
+
 export const ChnagedText=Template.bind({});
 ChnagedText.args={
   title:"This is a new title",
