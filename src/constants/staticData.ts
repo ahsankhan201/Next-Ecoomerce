@@ -1,3 +1,10 @@
+const sampleImages = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrHPI-Z7KOgBBmcHEwnk7s8LnU5R6o4nNAUA&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+  "https://cdn.shopify.com/s/files/1/0262/5804/7069/collections/Calza.png?v=1583492578",
+];
+
 export const menuData = [
   {
     title: "MENS",
@@ -141,10 +148,13 @@ export const topSallerData = [
     ratingCount: "100",
     description: "Lorem ipsum dolor sit amet,",
     color: "Black/White",
-    size: "10",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Nike",
     category: "Mens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "2",
@@ -158,10 +168,13 @@ export const topSallerData = [
     ratingCount: "50",
     description: "Lorem ipsum dolor sit amet,",
     color: "Pink/White",
-    size: "7",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Adidas",
     category: "Womens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "3",
@@ -175,10 +188,13 @@ export const topSallerData = [
     ratingCount: "20",
     description: "Lorem ipsum dolor sit amet, ",
     color: "Blue",
-    size: "12",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Crocs",
     category: "Kids",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "4",
@@ -192,10 +208,13 @@ export const topSallerData = [
     ratingCount: "80",
     description: "Lorem ipsum dolor sit amet,",
     color: "Brown",
-    size: "9",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Clarks",
     category: "Mens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "5",
@@ -209,10 +228,13 @@ export const topSallerData = [
     ratingCount: "60",
     description: "Lorem ipsum dolor sit amet,",
     color: "Gray/Pink",
-    size: "8",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "New Balance",
     category: "Womens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "6",
@@ -226,10 +248,13 @@ export const topSallerData = [
     ratingCount: "100",
     description: "Lorem ipsum dolor sit amet,",
     color: "Black/White",
-    size: "10",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Nike",
     category: "Mens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "7",
@@ -243,10 +268,13 @@ export const topSallerData = [
     ratingCount: "50",
     description: "Lorem ipsum dolor sit amet,",
     color: "Pink/White",
-    size: "7",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Adidas",
     category: "Womens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "8",
@@ -260,10 +288,13 @@ export const topSallerData = [
     ratingCount: "20",
     description: "Lorem ipsum dolor sit amet, ",
     color: "Blue",
-    size: "12",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Crocs",
     category: "Kids",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "9",
@@ -277,10 +308,13 @@ export const topSallerData = [
     ratingCount: "80",
     description: "Lorem ipsum dolor sit amet,",
     color: "Brown",
-    size: "9",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "Clarks",
     category: "Mens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
   {
     id: "10",
@@ -294,10 +328,13 @@ export const topSallerData = [
     ratingCount: "60",
     description: "Lorem ipsum dolor sit amet,",
     color: "Gray/Pink",
-    size: "8",
+    size: ["40/6", "42/3", "44/1", "20/4", "12"],
     quantity: "1",
     brand: "New Balance",
     category: "Womens",
+    hoverImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    sampleImages: sampleImages,
   },
 ];
 
@@ -401,9 +438,9 @@ export const navMenu = [
     subMenu: [
       {
         title: "Shoes",
-        id: "Shoes", 
-      }
-    ]
+        id: "Shoes",
+      },
+    ],
   },
   {
     id: "3",
@@ -458,5 +495,39 @@ export const navMenu = [
     id: "3",
     title: "CUSTOMER REVIEWS",
     link: "/",
+  },
+];
+
+export const DetailPageTabs = [
+  {
+    id: "1",
+    title: "Description",
+    content: [
+      "Feel the breeze with these Smart Sandals for Men by Ndure.",
+
+      "These shoes have been made with good quality Man Made Leather material that gives them durability",
+
+      "These shoes come with a contemporary detailing and are finished with a comfortable insole and round toe shape",
+
+      "A TPR outsole keeps the shoe light and provides anti-slip resistence.",
+    ],
+  },
+  {
+    id: "2",
+    title: "Customer Reviews",
+  },
+  {
+    id: "3",
+    title: "Shipping & Returns",
+    content: [
+      "Free Shipping on all orders above Rs.2,500",
+
+      "Fixed Shipping on all orders below Rs.2,500",
+
+      "The delivery time will be 7-10 working days",
+      "The parcel will be sent though a registered courier company. Customers are supposed to pay before receiving the parcel due to security concerns",
+
+      "Customer should simply reject the parcel in case its opened or damaged at the time of delivery",
+    ],
   },
 ];
