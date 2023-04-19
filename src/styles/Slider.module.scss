@@ -4,8 +4,8 @@
   left: 56px;
   transform: translateY(-50%);
   z-index: 1;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: rgba(12, 23, 43, 1.8);
+  color: white;
   font-size: 18px;
   padding: 10px 15px;
   border: none;
@@ -24,8 +24,8 @@
   right: 56px;
   transform: translateY(-50%);
   z-index: 1;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: rgba(12, 23, 43, 1.8);
+  color: white;
   font-size: 18px;
   padding: 10px 15px;
   border: none;
@@ -44,7 +44,11 @@
 
 .sliderImg {
   max-width: 100%;
-  width: 100%;
-  height: 386px;
+  width: 50%;
+  height: 363px;
+  margin: 0 auto;
+  display: block;
+  border: absolute;
+  border-radius: 4%;
  
 }

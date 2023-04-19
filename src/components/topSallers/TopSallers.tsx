@@ -27,8 +27,8 @@ const TopSallers = () => {
           <CircularProgress />
         </div>
       )}
-      <h3 className={styles.eachSectionHeading}>TopSallers</h3>
       <div className={styles.tabContainer}>
+      <p className={styles.eachSectionHeading}>TopSallers</p>
         <div className={styles.tablabels}>
           {menuData.map((tab, index) => (
             <div

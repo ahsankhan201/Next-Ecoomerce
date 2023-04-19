@@ -1,35 +1,36 @@
-import { FaPlus, FaMinus } from 'react-icons/fa';
+import { FaPlus, FaMinus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { DetailPageTabs, topSallerData } from "../constants/staticData";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/RecentlyViewed";
 import ProductReviews from "@/components/reviews/ProductReviews";
+import ReactImageMagnify from "react-image-magnify";
 const ProductDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   const [product, setProduct] = useState<any>(null);
   const [quantity, setQuantity] = useState(1);
 
-  useEffect(() => {
-    console.log("id", id);
-    if (id) {
-      const filteredProduct: any = topSallerData.filter(
-        (item) => item.id === id
-      )[0];
-      setProduct(filteredProduct);
-    }
+  const filteredProducts = topSallerData.filter((item) => item.id === id)[0];
+
+  useMemo(() => {
+    id ? setProduct(filteredProducts) : setProduct(null);
   }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen w-screen text-2xl font-bold text-gray-500 ">
+        Loading...
+      </div>
+    );
   }
 
   return (
     <div className="mt-3 mb-3">
-      <h2 className="text-lg font-serif text-center">{product.name}</h2>
-      <div className="flex row">
-        <div>
+      {/* <h2 className="text-lg font-serif text-center">{product.name}</h2> */}
+      <div className="flex row content-between border-2" >
+        <div className="border-2 w-1/2">
           <img src={product.image} alt="image" width={400} height={500} />
           <div className="flex row mt-4 mb-4">
             {product.sampleImages.map((images: string, inx: number) => {
@@ -49,17 +50,17 @@ const ProductDetail = () => {
           <Tabs DetailPageTabs={DetailPageTabs} />
         </div>
         <div className="ml-3 w-2/5 mr-3">
-          <p className="text-lg font-serif text-center mt-2 mb-2">
+          <p className="text-lg font-serif text-center mt-2 mb-12">
             {product.title}
           </p>
           <div className="mt-3 mb-3 ">
-            <div className="flex row justify-between mt-2 mb-2">
-              <p className="text-sm font-serif">Brand</p>
+            <div className="flex row justify-around mt-2 mb-2">
+              <p className="text-sm font-serif w-64 text-left">Brand</p>
               <p className="text-sm font-serif">{product.brand}</p>
             </div>
-            <div className="flex row justify-between mt-2 mb-2">
-              <p className="text-sm font-serif">Product Code</p>
-              <p className="text-sm font-serif text-center">
+            <div className="flex row justify-around mt-2 mb-2">
+              <p className="text-sm font-serif w-64 text-left">Product Code</p>
+              <p className="text-sm font-serif text-center w-1/2">
                 M-AT-BOX-0001:NVY/GRY:40/6
               </p>
             </div>
@@ -97,9 +98,9 @@ const ProductDetail = () => {
               onClick={() => {
                 setQuantity(Math.max(1, quantity - 1));
               }}
-              className="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex    items-center justify-center hover:bg-gray-300 transition duration-150 ease-in-out"
+              className="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center hover:bg-gray-300 transition duration-150 ease-in-out"
             >
-             <FaMinus />
+              <FaMinus />
             </button>
           </div>
           <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-150 ease-in-out">
@@ -114,3 +115,36 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+
+
+
+
+
+
+  {/* <ReactImageMagnify
+            style={{
+              cursor: "crosshair",
+              width: "277px",
+              height: "216px",
+              position: "relative",
+            }}
+            {...{
+              smallImage: {
+                alt: "Wristwatch by Versace",
+                isFluidWidth: true,
+                src: product.image,
+                width: 300,
+                height: 200,
+                srcSet: product.image,
+              },
+              largeImage: {
+                src: product.image,
+                width: 300,
+                height: 200,
+                srcSet: product.image,
+              },
+              lensStyle: { backgroundColor: "rgba(0,0,0,.6)" },
+            }}
+          /> */}

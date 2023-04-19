@@ -5,7 +5,7 @@ import Card from "../Card";
 const AllBrands = () => {
   return (
     <>
-      <h3 className={styles.eachSectionHeading}>OUR BRANDS</h3>
+      <p className={styles.eachSectionHeading}>OUR BRANDS</p>
       <div className={styles.brandsContainer}>
         {brandsImages.map((item, index) => {
           return (
@@ -16,7 +16,7 @@ const AllBrands = () => {
         })}
       </div>
 
-      <h3 className={styles.eachSectionHeading}>#SPOTLIGHT</h3>
+      <p className={styles.eachSectionHeading}>#SPOTLIGHT</p>
       <h5 className={styles.eachSectionHeading}>
         We Know What Your Closet Needs!
       </h5>
