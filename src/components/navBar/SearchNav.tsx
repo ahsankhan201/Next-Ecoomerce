@@ -39,7 +39,7 @@ const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: 
               value={search}
               onChange={(e)=>setSearch(e.target.value)}
                 type="text"
-                placeholder={searchText}
+                placeholder={searchText || "Search for products, brands and more"}
                 name="search"
                 className={styles.search}
               />

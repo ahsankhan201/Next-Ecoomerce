@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/RecentlyViewed";
 import ProductReviews from "@/components/reviews/ProductReviews";
-import ReactImageMagnify from "react-image-magnify";
 const ProductDetail = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -28,9 +27,8 @@ const ProductDetail = () => {
 
   return (
     <div className="mt-3 mb-3">
-      {/* <h2 className="text-lg font-serif text-center">{product.name}</h2> */}
-      <div className="flex row content-between border-2" >
-        <div className="border-2 w-1/2">
+      <div className="flex row content-between " >
+        <div className="w-1/2">
           <img src={product.image} alt="image" width={400} height={500} />
           <div className="flex row mt-4 mb-4">
             {product.sampleImages.map((images: string, inx: number) => {
@@ -60,26 +58,26 @@ const ProductDetail = () => {
             </div>
             <div className="flex row justify-around mt-2 mb-2">
               <p className="text-sm font-serif w-64 text-left">Product Code</p>
-              <p className="text-sm font-serif text-center w-1/2">
+              <p className="text-sm font-serif text-center w-3/2">
                 M-AT-BOX-0001:NVY/GRY:40/6
               </p>
             </div>
           </div>
-          <p className="text-2xl font-serif">Rs. {product.price}</p>
-          <div>
+          <p className="text-2xl font-serif mt-5 mb-3 ml-2">Rs. {product.price}</p>
+          <div className="mb-4 mt-4">
             <ul className="flex row">
               {product.size.map((size: string, idx: number) => (
                 <li
                   key={idx}
-                  className="p-2 m-1 border-2 border-black cursor-pointer hover:bg-gray-100 active:bg-gray-300"
+                  className="p-2 m-1 border-2 border-black cursor-pointer hover:bg-gray-100 active:bg-gray-300 text-sm"
                 >
                   {size}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex items-center space-x-2">
-            <p className="text-gray-700 font-medium">Quantity</p>
+          <div className="flex items-center space-x-2 mt-2">
+            <p className="text-gray-700 font-medium ml-3 text-lg">Quantity</p>
             <button
               onClick={() => {
                 setQuantity(quantity + 1);
@@ -103,7 +101,7 @@ const ProductDetail = () => {
               <FaMinus />
             </button>
           </div>
-          <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-150 ease-in-out">
+          <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out">
             Add to Cart
           </button>
         </div>

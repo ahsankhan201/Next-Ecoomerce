@@ -12,7 +12,6 @@ import AllBrands from "../components/home/brands/AllBrands";
 const inter = Inter({ subsets: ["latin"] });
 const TopSallers = dynamic(() => import("../components/topSallers/TopSallers"));
 
-
 export default function Home() {
   return (
     <>
@@ -31,13 +30,9 @@ export default function Home() {
             return <Card key={index} item={item} />;
           })}
         </div>
-        {/* <div className={styles.fisrtSlideContainer}> */}
-          <TopSallers />
-        {/* </div> */}
-        <div>
-          <MegaDiscount />
-        </div>
-          <AllBrands />
+        <TopSallers />
+        <MegaDiscount />
+        <AllBrands />
       </main>
     </>
   );

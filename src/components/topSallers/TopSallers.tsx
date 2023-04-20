@@ -28,7 +28,7 @@ const TopSallers = () => {
         </div>
       )}
       <div className={styles.tabContainer}>
-      <p className={styles.eachSectionHeading}>TopSallers</p>
+    <p className={styles.eachSectionHeading}>TopSallers</p>
         <div className={styles.tablabels}>
           {menuData.map((tab, index) => (
             <div

@@ -62,7 +62,6 @@ export default function StickyHeadTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event: any, newPage: any) => {
-    console.log("event of handleChangePage", event);
     setPage(newPage);
   };
 
@@ -72,33 +71,35 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <Paper sx={{ width: "100%", overflow: "hidden",color:'white' }} className="text-white">
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" style={{color:"white"}}>
           <TableHead>
             <TableRow>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
-                  //   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth,color:"black" }}
                 >
                   {column.label}
                 </TableCell>
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className="text-white">
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row: any) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow style={{
+                    color:"white"
+                  }} hover role="checkbox" tabIndex={-1} key={row.code} className="text-white">
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        // align={column.align}
-                        <TableCell key={column.id}>
+                        <TableCell key={column.id} style={{
+                          color:"white"
+                        }} className="text-white">
                           {column.format && typeof value === "number"
                             ? column.format(value)
                             : value}

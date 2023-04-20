@@ -1,11 +1,5 @@
 import { useState } from "react";
 import styles from "./../../styles/Home.module.scss";
-import { menuData } from "@/constants/staticData";
-const tabs = [
-  { label: "Tab 1", content: "This is the content for tab 1." },
-  { label: "Tab 2", content: "This is the content for tab 2." },
-  { label: "Tab 3", content: "This is the content for tab 3." },
-];
 
 const Tabs = ({ DetailPageTabs }: any) => {
   const [activeTab, setActiveTab] = useState(0);

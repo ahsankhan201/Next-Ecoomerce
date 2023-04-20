@@ -394,18 +394,22 @@ export const navMenu = [
       {
         title: "MENS",
         id: "Mens",
+        link:"sale-men"
       },
       {
         title: "WOMENS",
         id: "Womens",
+        link:"sale-women"
       },
       {
         title: "KIDS",
         id: "Kids",
+        link:"sale-kids"
       },
       {
         title: "ACCESSORIES",
         id: "Accessories",
+        link:"sale-accessories"
       },
     ],
   },
@@ -444,7 +448,7 @@ export const navMenu = [
     ],
   },
   {
-    id: "3",
+    id: "4",
     title: "Kids",
     link: "/",
     subMenu: [
@@ -459,7 +463,7 @@ export const navMenu = [
     ],
   },
   {
-    id: "4",
+    id: "5",
     title: "Accessories",
     link: "/",
     subMenu: [
@@ -474,7 +478,7 @@ export const navMenu = [
     ],
   },
   {
-    id: "5",
+    id: "6",
     title: "SHOP BY BRAND",
     link: "/",
     subMenu: [
@@ -493,7 +497,7 @@ export const navMenu = [
     ],
   },
   {
-    id: "3",
+    id: "7",
     title: "CUSTOMER REVIEWS",
     link: "/",
   },
@@ -531,4 +535,40 @@ export const DetailPageTabs = [
       "Customer should simply reject the parcel in case its opened or damaged at the time of delivery",
     ],
   },
+];
+
+export const TableData = [
+  {
+    id: 1,
+    price: 1000,
+    quantity: 1,
+    title: "New Balance",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    discount: 10,
+    size: "M",
+    color: "Black",
+    total: 900,
+    newPrice: 900,
+    oldPrice: 1000,
+    discountPrice: 100,
+    discountPercentage: 10,
+  },
+  {
+    id: 1,
+    price: 1000,
+    quantity: 1,
+    title: "New Balance",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwBmzhPbydbbt0yejDczPcLucQsAht-dU9IV2BzTiJRMM034gtcFzzkfhDwVwWabr87Vg&usqp=CAU",
+    discount: 10,
+    size: "M",
+    color: "Black",
+    total: 900,
+    newPrice: 900,
+    oldPrice: 1000,
+    discountPrice: 100,
+    discountPercentage: 10,
+  },
+
 ];

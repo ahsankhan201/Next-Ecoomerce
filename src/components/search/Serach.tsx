@@ -21,7 +21,7 @@ const Serach = ({ search }: any) => {
       <div className={styles.searchContainer}>
         {searchResult.map((slides: any, index: number) => {
           return (
-            <Link href={`${slides.id}`}>
+            <Link href={`/${slides.id}`}>
               <div
                 key={index}
                 className={styles.searchContainer1}
