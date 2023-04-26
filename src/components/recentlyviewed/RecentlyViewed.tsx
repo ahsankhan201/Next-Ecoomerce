@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import { CircularProgress } from "@mui/material";
 import { responsive } from "../../constants/carousalResponsive";
 import styles from "../../styles/Home.module.scss";
+import Link from "next/link";
 const RecentlyViewed = ({ topSallerData, loading1 }: any) => {
   return (
     <>
@@ -30,10 +31,12 @@ const RecentlyViewed = ({ topSallerData, loading1 }: any) => {
             itemClass="carousel-item-padding-40-px"
           >
             {topSallerData.map((slides: any, index: number) => {
+              console.log("slides", slides)
               return (
                 <div key={index}>
+                  <Link href={`/${slides.id}`}>
                   <img
-                    src={slides.image}
+                    src={slides.featured_image}
                     alt="image"
                     style={{
                       width: "200px",
@@ -43,12 +46,13 @@ const RecentlyViewed = ({ topSallerData, loading1 }: any) => {
                       display: "block",
                     }}
                   />
+                  </Link>
                 </div>
               );
             })}
           </Carousel>
         </>
-      )}
+    )}
     </>
   );
 };

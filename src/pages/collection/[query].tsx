@@ -18,7 +18,7 @@ const SpecificCollections = () => {
           color:"white"
         }}>
           <p className="uppercase text-lg font-bold">{query}</p>
-          <TableCus />
+        <TableCus />
         </div>
       </div>
     </>

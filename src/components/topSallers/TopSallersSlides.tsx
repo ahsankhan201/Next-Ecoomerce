@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CircularProgress, LinearProgress } from "@mui/material";
 import { responsive } from "../../constants/carousalResponsive";
+import Link from "next/link";
 
 const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
   const [loading1, setLoading] = useState(loading);
@@ -35,19 +36,22 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
           itemClass="carousel-item-padding-40-px"
         >
           {topSallerData.map((slides: any, index: number) => {
+            console.log("slides", slides);
             return (
-              <div key={index}>
-                <img
-                  src={slides.image}
-                  alt="image"
-                  className={styles.TabsliderImg}
-                />
-                <div className="mb-12">
-                  <p className="text-white text-center">{slides.brand}</p>
-                  <p className="text-white text-center">{slides.description}</p>
-                  <p className="text-white text-center">Rs.{slides.price}</p>
+              <Link href={`/${slides.id}`}>
+                <div key={index}>
+                  <img
+                    src={slides.images[0]}
+                    alt="image"
+                    className={styles.TabsliderImg}
+                  />
+                  <div className="mb-12">
+                    <p className="text-white text-center">{slides.vendor}</p>
+                    <p className="text-white text-center">{slides.title}</p>
+                    <p className="text-white text-center">Rs.{slides.price}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </Carousel>

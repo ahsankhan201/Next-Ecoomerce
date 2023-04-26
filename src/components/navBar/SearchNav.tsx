@@ -7,8 +7,6 @@ import { Badge } from "@nextui-org/react";
 
 const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: any) => {
 
- 
-  console.log("textColor", textColor);
   return (
     <>
       <div>
@@ -26,7 +24,7 @@ const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: 
             style={{ color: textColor, fontSize: fontSize }}
           >
             <Link
-              href="#"
+              href="/"
               className={styles.logo}
               style={{ color: textColor, fontSize: fontSize }}
             >

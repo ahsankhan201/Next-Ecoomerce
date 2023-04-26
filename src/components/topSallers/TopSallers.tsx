@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import TopSallersSlides from "./TopSallersSlides";
 import { CircularProgress } from "@mui/material";
-import { menuData, topSallerData } from "../../constants/staticData";
+import { menuData, topSallerData ,sideDataClone} from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
 
 const TopSallers = () => {
-  const [activeTab, setActiveTab] = useState<any>("MENS");
+  const [activeTab, setActiveTab] = useState<any>("Mens Footwear");
   const [slidesData, setSlidesData] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   const filterData = () => {
-    const filteredTopSallerData = topSallerData.filter((item) => {
-      const category = item.category.toLowerCase();
+    const filteredTopSallerData = sideDataClone.filter((item) => {
+      const category = item.type.toLowerCase();
       return category.includes(activeTab.toLowerCase());
     });
     setSlidesData(filteredTopSallerData);
