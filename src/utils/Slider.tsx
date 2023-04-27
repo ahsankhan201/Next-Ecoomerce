@@ -4,14 +4,10 @@ import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-
 const Slider = ({ SliderImages }: any) => {
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    slideChanged(slider: any) {
-      // setCurrentSlide(slider.details().relativeSlide);
-    },
     created() {
       setLoaded(true);
     },

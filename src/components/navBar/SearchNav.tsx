@@ -1,12 +1,27 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../../src/styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
+import { useSelector } from 'react-redux'
+import { RootState } from "@/store/store";
 
-const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: any) => {
+const SearchNav = ({
+  textColor,
+  title,
+  fontSize,
+  searchText,
+  setSearch,
+  search,
+}: any) => {
+  
+  const [totalCard,setTotalCard]=useState<any>([])
+  const count = useSelector((state: RootState) => state);
 
+  useEffect(()=>{
+    setTotalCard(count?.cart?.items);
+  },[count])
   return (
     <>
       <div>
@@ -34,10 +49,12 @@ const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: 
           <div className={styles.auth}>
             <div className={styles.search_container}>
               <input
-              value={search}
-              onChange={(e)=>setSearch(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 type="text"
-                placeholder={searchText || "Search for products, brands and more"}
+                placeholder={
+                  searchText || "Search for products, brands and more"
+                }
                 name="search"
                 className={styles.search}
               />
@@ -59,7 +76,7 @@ const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: 
                 }}
                 size="sm"
               >
-                10
+                {totalCard?.length}
               </Badge>
             </div>
           </div>

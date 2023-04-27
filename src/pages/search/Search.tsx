@@ -4,7 +4,7 @@ import Serach from './../../components/search/Serach';
 const Search = ({search}:any) => {
   return (
     <div>
-        <Serach  search={search}/>
+        <Serach search={search}/>
     </div>
   )
 }

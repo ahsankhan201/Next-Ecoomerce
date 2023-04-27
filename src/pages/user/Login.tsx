@@ -5,8 +5,6 @@ const Login = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
     // Add code to authenticate user
   };
 

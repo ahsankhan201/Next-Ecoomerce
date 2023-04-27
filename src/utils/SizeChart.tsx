@@ -68,3 +68,19 @@ const SizeChart = ({handleClose}:any) => {
 }
 
 export default SizeChart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Awaqas123@n

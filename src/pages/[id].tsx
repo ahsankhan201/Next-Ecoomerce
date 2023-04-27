@@ -1,9 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { CircularProgress, LinearProgress } from "@mui/material";
 import { responsive } from "../constants/carousalResponsive";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Dialog } from "@mui/material";
+import { Dialog, Button } from "@mui/material";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { DetailPageTabs, sideDataClone } from "../constants/staticData";
@@ -12,9 +11,18 @@ import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/RecentlyViewed";
 import ProductReviews from "@/components/reviews/ProductReviews";
 import SizeChart from "@/utils/SizeChart";
-import Link from "next/link";
+import {addToCart} from '../slices/CartSlice'
+import { useSelector, useDispatch } from 'react-redux'
+interface CartItem {
+  name: string;
+  quantity: number;
+  sku: string;
+  id: string;
+  price: string;
+}
 
 const ProductDetail = () => {
+  const dispatch = useDispatch()
   const router = useRouter();
   const { id } = router.query;
   const [product, setProduct] = useState<any>(null);
@@ -38,28 +46,6 @@ const ProductDetail = () => {
     setOpen(true);
   };
 
-  const previousRecord = () => {
-    console.log("previousRecord");
-    // const filteredProducts=sideDataClone.filter((item:any)=>item.id==id)[0];
-    // const index=sideDataClone.indexOf(filteredProducts);
-
-    // if(index>0){
-    //   const previousRecord=sideDataClone[index-1];
-    //   router.push(`/product/${previousRecord.id}`);
-    // }
-  };
-
-  const nextRecord = () => {
-    const currentIndex = sideDataClone.findIndex((item: any) => item.id == id);
-    if (currentIndex < sideDataClone.length - 1) {
-      const nextRecord = sideDataClone[currentIndex + 1];
-      console.log("nextRecord", nextRecord);
-      // router.push(`/product/${nextRecord.id}`);
-      setProduct(nextRecord);
-      setSelectedImage(nextRecord.featured_image);
-    }
-  };
-
   useMemo(() => {
     if (id && filteredProducts) {
       setProduct(filteredProducts);
@@ -80,52 +66,61 @@ const ProductDetail = () => {
     );
   }
 
+const addToCardItem=(name:string,quantity:number,sku:string,id:string,price:string)=>{
+  const cartItem:CartItem={
+    name,
+    quantity,
+    sku,
+    id,
+    price
+  }
+  dispatch(addToCart(cartItem))
+  console.log("cartItem",cartItem);
+}
+
+
   return (
     <div className="mt-3 mb-3">
       <div className="flex row content-between ">
         <div className="w-1/2">
           <img src={selectedImage} alt="image" width={400} height={500} />
-          <div className="flex row mt-4 mb-4">
-            
-            {product.images.map((images: string, inx: number) => {
-              return (
-                <img
-                  key={inx}
-                  className={`mr-1 ml-1 border-2 rounded ${
-                    selectedImage === images && "border-black"
-                  }`}
-                  src={images}
-                  alt="image"
-                  width={100}
-                  height={100}
-                  onClick={() => handleClick(images)}
-                />
-              );
-            })}
+          <div className="mt-4 mb-4">
+            <Carousel
+              focusOnSelect={true}
+              swipeable={true}
+              draggable={true}
+              showDots={true}
+              responsive={responsive}
+              ssr={true}
+              infinite={true}
+              autoPlay={false}
+              autoPlaySpeed={5000}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {product?.images.map((slides: any, index: number) => {
+                return (
+                  <div
+                    key={index}
+                    className="w-32 h-32"
+                    onClick={() => {
+                      handleClick(slides);
+                    }}
+                  >
+                    <img src={slides} alt="image" />
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
-
           <Tabs DetailPageTabs={DetailPageTabs} product={product} />
         </div>
         <div className="ml-3 w-2/5 mr-3">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "right",
-              alignItems: "right",
-            }}
-            className="
-            flex row
-          "
-          >
-            <FaArrowRight
-              className="text-2xl mr-3"
-              onClick={() => previousRecord()}
-            />
-            <FaArrowLeft
-              className="text-2xl ml-3"
-              onClick={() => nextRecord()}
-            />
-          </div>
           <p className="text-lg font-serif text-center mt-2 mb-12">
             {product.title}
           </p>
@@ -231,8 +226,10 @@ const ProductDetail = () => {
               <FaMinus />
             </button>
           </div>
-          <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out">
-            Add to Cart
+          <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out" 
+          onClick={()=>addToCardItem(product.title,quantity,sku,product.id,product.price)}
+          >
+            Add to Cart 
           </button>
         </div>
       </div>
@@ -244,68 +241,3 @@ const ProductDetail = () => {
 
 export default ProductDetail;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <Carousel
-//               focusOnSelect={true}
-//               swipeable={true}
-//               draggable={true}
-//               showDots={true}
-//               responsive={responsive}
-//               ssr={true}
-//               infinite={true}
-//               autoPlay={true}
-//               autoPlaySpeed={5000}
-//               keyBoardControl={true}
-//               customTransition="all .5"
-//               transitionDuration={500}
-//               containerClass="carousel-container"
-//               removeArrowOnDeviceType={["tablet", "mobile"]}
-//               dotListClass="custom-dot-list-style"
-//               itemClass="carousel-item-padding-40-px"
-//             >
-//               {product?.images.map((slides: any, index: number) => {
-//                 return (
-//                   <Link href={`/${slides.id}`} key={index}>
-//                   <div key={index}>
-//                     <h2>welcome</h2>
-//                     <img
-//                       src={slides.images}
-//                      style={{
-//                       width:'50px',
-//                       height:'50px',
-//                       border:'2px solid red'
-//                      }}
-//                       alt="image"
-//                       // className={styles.TabsliderImg}
-//                     />
-//                   </div>
-//                   </Link>
-//                 );
-//               })}
-//             </Carousel>

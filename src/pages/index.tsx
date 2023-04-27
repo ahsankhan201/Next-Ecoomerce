@@ -17,6 +17,7 @@ import AllBrands from "../components/home/brands/AllBrands";
 const inter = Inter({ subsets: ["latin"] });
 const TopSallers = dynamic(() => import("../components/topSallers/TopSallers"));
 
+
 export default function Home() {
   return (
     <>

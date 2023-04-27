@@ -1,4 +1,4 @@
-import { topSallerData, sideDataClone } from "@/constants/staticData";
+import { sideDataClone } from "@/constants/staticData";
 import React, { useMemo } from "react";
 import styles from "./Search.module.scss";
 import { useRouter } from "next/router";
@@ -21,7 +21,6 @@ const Serach = ({ search }: any) => {
       <h2>YOUR SEARCH FOR "{search}*" REVEALED THE FOLLOWING:</h2>
       <div className={styles.searchContainer}>
         {searchResult?.map((slides: any, index: number) => {
-          console.log("sasssaas", slides);
           return (
             <Link href={`/${slides.id}`}>
               <div

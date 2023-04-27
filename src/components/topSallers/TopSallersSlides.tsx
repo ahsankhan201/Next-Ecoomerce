@@ -2,7 +2,7 @@ import styles from "../../styles/Home.module.scss";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { CircularProgress, LinearProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { responsive } from "../../constants/carousalResponsive";
 import Link from "next/link";
 
@@ -36,7 +36,6 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
           itemClass="carousel-item-padding-40-px"
         >
           {topSallerData.map((slides: any, index: number) => {
-            console.log("slides", slides);
             return (
               <Link href={`/${slides.id}`}>
                 <div key={index}>

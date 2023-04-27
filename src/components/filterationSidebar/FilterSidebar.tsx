@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const FilterationSideBar = () => {
+const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
   const [brands, setBrands] = useState<any>([]);
   const [sizes, setSizes] = useState<any>([]);
   const [brandsExpanded, setBrandsExpanded] = useState<boolean>(true);
   const [genderExpanded, setGenderExpanded] = useState<boolean>(true);
   const [sizesExpanded, setSizesExpanded] = useState<boolean>(true);
-
-  const initialFilters: any = {
-    brands: [],
-    gender: [],
-    sizes: [],
-  };
-  const [filters, setFilters] = useState(initialFilters);
-
-  const FilterSidebar = () => {
-    // Rest of the code
-  };
 
   const handleFilters = (category: any, option: any) => {
     const newFilters = { ...filters };
@@ -27,34 +16,34 @@ const FilterationSideBar = () => {
     } else {
       newFilters[category].splice(index, 1);
     }
-
     setFilters(newFilters);
   };
 
   useEffect(() => {
-    setBrands([
-      { name: "Nike", value: "nike" },
-      { name: "Adidas", value: "adidas" },
-      { name: "Puma", value: "puma" },
-      { name: "Reebok", value: "reebok" },
-      { name: "New Balance", value: "newbalance" },
-    ]);
+    const uniqueSizes: any = new Set<any>();
+    sideDataClone.forEach((item: any) => {
+      item.options[0].values.forEach((value: any) => {
+        uniqueSizes.add(value);
+      });
+    });
+    setSizes([...uniqueSizes].map((value) => ({ name: value, value })));
 
-    setSizes([
-      { name: "Small", value: "small" },
-      { name: "Medium", value: "medium" },
-      { name: "Large", value: "large" },
-      { name: "XL", value: "xl" },
-      { name: "XXL", value: "xxl" },
-    ]);
+    const uniqueBrands: any = new Set<any>();
+    sideDataClone.forEach((item: any) => {
+      uniqueBrands.add(item.vendor);
+    });
+    setBrands([...uniqueBrands].map((value) => ({ name: value, value })));
   }, []);
 
   return (
     <div>
-      <div className="border-r border-gray-200 p-4">
-        {/* Brands */}
+      <div
+        className="border-r border-gray-200 p-4"
+        style={{
+          width: "167px",
+        }}
+      >
         <div className="mb-4">
-          {/* Add an icon and a handler to toggle the expanded state */}
           <div
             className="flex items-center content-center cursor-pointer mb-2"
             onClick={() => setBrandsExpanded(!brandsExpanded)}
@@ -74,21 +63,26 @@ const FilterationSideBar = () => {
                 <input
                   id={`brand-${brand.value}`}
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out"
+                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out mr-3"
                   value={brand.value}
                   checked={filters.brands.includes(brand.value)}
                   onChange={() => handleFilters("brands", brand.value)}
+                  style={{
+                    width: "50px",
+                  }}
                 />
                 <label
+                  style={{
+                    width: "50px",
+                  }}
                   htmlFor={`brand-${brand.value}`}
-                  className="ml-2 block text-sm text-white"
+                  className="ml-2 block text-sm text-white ml-3"
                 >
                   {brand.name}
                 </label>
               </div>
             ))}
         </div>
-        {/* Gender */}
         <div className="mb-4">
           <div
             className="flex items-center"
@@ -111,8 +105,14 @@ const FilterationSideBar = () => {
                   value="male"
                   checked={filters.gender.includes("male")}
                   onChange={() => handleFilters("gender", "male")}
+                  style={{
+                    width: "50px",
+                  }}
                 />
                 <label
+                  style={{
+                    width: "50px",
+                  }}
                   htmlFor="gender-male"
                   className="ml-2 block text-sm text-white"
                 >
@@ -127,8 +127,14 @@ const FilterationSideBar = () => {
                   value="female"
                   checked={filters.gender.includes("female")}
                   onChange={() => handleFilters("gender", "female")}
+                  style={{
+                    width: "50px",
+                  }}
                 />
                 <label
+                  style={{
+                    width: "50px",
+                  }}
                   htmlFor="gender-female"
                   className="ml-2 block text-sm text-white"
                 >
@@ -143,10 +149,16 @@ const FilterationSideBar = () => {
                   value="unisex"
                   checked={filters.gender.includes("unisex")}
                   onChange={() => handleFilters("gender", "unisex")}
+                  style={{
+                    width: "50px",
+                  }}
                 />
                 <label
                   htmlFor="gender-unisex"
                   className="ml-2 block text-sm text-white"
+                  style={{
+                    width: "50px",
+                  }}
                 >
                   Unisex
                 </label>
@@ -154,7 +166,6 @@ const FilterationSideBar = () => {
             </>
           )}
         </div>
-        {/* Sizes */}
         <div>
           <div
             className="flex items-center"
@@ -177,8 +188,14 @@ const FilterationSideBar = () => {
                   value={size.value}
                   checked={filters.sizes.includes(size.value)}
                   onChange={() => handleFilters("sizes", size.value)}
+                  style={{
+                    width: "50px",
+                  }}
                 />
                 <label
+                  style={{
+                    width: "50px",
+                  }}
                   htmlFor={`size-${size.value}`}
                   className="ml-2 block text-sm text-white"
                 >

@@ -4,7 +4,7 @@ import styles from "../../../styles/Home.module.scss";
 import Card from "../Card";
 const AllBrands = () => {
   return (
-  <>
+    <>
       <p className={styles.eachSectionHeading}>OUR BRANDS</p>
       <div className={styles.brandsContainer}>
         {brandsImages.map((item, index) => {

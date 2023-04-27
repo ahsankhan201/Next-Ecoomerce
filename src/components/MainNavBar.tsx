@@ -8,10 +8,6 @@ const MainNavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openSubMenu, setOpenSubMenu] = useState(null);
 
-  // const handleMenuClick = (event: any) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
     setOpenSubMenu(null);
@@ -25,7 +21,7 @@ const MainNavBar = () => {
   return (
     <div className={styles.navBar}>
       <div className={styles.menuContainer}>
-        {navMenu.map((menuItem: any,index:any) => (
+        {navMenu.map((menuItem: any, index: any) => (
           <div key={menuItem.id}>
             {menuItem.subMenu ? (
               <div className={styles.menuItemWithSubmenu}>
@@ -52,10 +48,10 @@ const MainNavBar = () => {
                   className={styles.subMenu}
                   BackdropProps={{ invisible: true }}
                 >
-                  {menuItem.subMenu.map((subMenuItem: any,index:any) => (
+                  {menuItem.subMenu.map((subMenuItem: any, index: any) => (
                     <Link
-                    key={index}
-                      href={`collection/${subMenuItem.link}`}
+                      key={index}
+                      href={`/collection/${subMenuItem.link}`}
                       onClick={handleMenuClose}
                       className={styles.subMenuTitle}
                     >
