@@ -1,8 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { responsive } from "../constants/carousalResponsive";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Dialog, Button } from "@mui/material";
+import { Dialog } from "@mui/material";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { DetailPageTabs, sideDataClone } from "../constants/staticData";
@@ -11,8 +10,8 @@ import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/RecentlyViewed";
 import ProductReviews from "@/components/reviews/ProductReviews";
 import SizeChart from "@/utils/SizeChart";
-import {addToCart} from '../slices/CartSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { addToCart } from "../slices/CartSlice";
+import { useDispatch } from "react-redux";
 interface CartItem {
   name: string;
   quantity: number;
@@ -22,7 +21,7 @@ interface CartItem {
 }
 
 const ProductDetail = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const router = useRouter();
   const { id } = router.query;
   const [product, setProduct] = useState<any>(null);
@@ -66,18 +65,23 @@ const ProductDetail = () => {
     );
   }
 
-const addToCardItem=(name:string,quantity:number,sku:string,id:string,price:string)=>{
-  const cartItem:CartItem={
-    name,
-    quantity,
-    sku,
-    id,
-    price
-  }
-  dispatch(addToCart(cartItem))
-  console.log("cartItem",cartItem);
-}
-
+  const addToCardItem = (
+    name: string,
+    quantity: number,
+    sku: string,
+    id: string,
+    price: string
+  ) => {
+    const cartItem: CartItem = {
+      name,
+      quantity,
+      sku,
+      id,
+      price,
+    };
+    dispatch(addToCart(cartItem));
+    console.log("cartItem", cartItem);
+  };
 
   return (
     <div className="mt-3 mb-3">
@@ -226,10 +230,19 @@ const addToCardItem=(name:string,quantity:number,sku:string,id:string,price:stri
               <FaMinus />
             </button>
           </div>
-          <button className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out" 
-          onClick={()=>addToCardItem(product.title,quantity,sku,product.id,product.price)}
+          <button
+            className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out"
+            onClick={() =>
+              addToCardItem(
+                product.title,
+                quantity,
+                sku,
+                product.id,
+                product.price
+              )
+            }
           >
-            Add to Cart 
+            Add to Cart
           </button>
         </div>
       </div>
@@ -241,3 +254,18 @@ const addToCardItem=(name:string,quantity:number,sku:string,id:string,price:stri
 
 export default ProductDetail;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";

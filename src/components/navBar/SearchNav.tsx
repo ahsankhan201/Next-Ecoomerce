@@ -60,7 +60,7 @@ const SearchNav = ({
               />
               <div className={styles.shoppingCart}>
                 <BiSearch className={styles.search_icon} />
-                <Link href="#" className={styles.shoopingCart}>
+                <Link href={`/checkout/${3}`} className={styles.shoopingCart}>
                   <FaShoppingCart size={30} />
                 </Link>
               </div>

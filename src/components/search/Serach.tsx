@@ -7,13 +7,12 @@ const Serach = ({ search }: any) => {
   const router = useRouter();
   const searchResult = useMemo(() => {
     return sideDataClone.filter((item: any) => {
-      console.log("filter", item);
       return item.type.toLowerCase().includes(search.toLowerCase());
     });
   }, [search]);
 
   function handleClick(slides: any) {
-    window.location.href = `/${slides.id}`;
+    router.push(`/${slides.id}`);
   }
 
   return (

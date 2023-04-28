@@ -3,3 +3,6 @@ export interface SliderInterface {
   title: string;
   id?: string;
 }
+
+
+
