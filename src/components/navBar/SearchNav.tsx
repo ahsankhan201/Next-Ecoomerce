@@ -30,7 +30,7 @@ const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: 
               className={styles.logo}
               style={{ color: textColor, fontSize: fontSize }}
             >
-              {title}
+              {title} Shoe Market
             </Link>
           </div>
           <div className={styles.auth}>

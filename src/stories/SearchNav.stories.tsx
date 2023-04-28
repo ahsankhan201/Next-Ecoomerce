@@ -9,8 +9,10 @@ export default {
 
 const Template: FunctionComponent<{ args: any }> = (args) => <SearchNav {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default:any = Template.bind({});
+Default.args = {
+  title:"Shoe Market",
+};
 
 
 export const HeadingCenter = () => (
@@ -42,10 +44,9 @@ export const DifferentOptions = () => (
   />
 );
 
-// export { HeadingCenter, SearchAndAddToCart, DifferentOptions };
 
 
-export const ChnagedText=Template.bind({});
+export const ChnagedText:any=Template.bind({});
 ChnagedText.args={
   title:"This is a new title",
   textColor:"red",
@@ -53,7 +54,7 @@ ChnagedText.args={
   searchText:"Shoes whose price is less than 1000"
 }
 
-export const Colored = Template.bind({});
+export const Colored:any = Template.bind({});
 Colored.args = {
   textColor: "red",
   onClick: action("Navigate to home page"),

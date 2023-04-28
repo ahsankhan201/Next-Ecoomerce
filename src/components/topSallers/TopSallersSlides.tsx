@@ -42,10 +42,10 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
                   alt="image"
                   className={styles.TabsliderImg}
                 />
-                <div>
-                  <p>{slides.brand}</p>
-                  <p>{slides.description}</p>
-                  <p>Rs.{slides.price}</p>
+                <div className="mb-12">
+                  <p className="text-white text-center">{slides.brand}</p>
+                  <p className="text-white text-center">{slides.description}</p>
+                  <p className="text-white text-center">Rs.{slides.price}</p>
                 </div>
               </div>
             );
@@ -66,7 +66,7 @@ export default TopSallersSlides;
       {loading == true ? (
         <div className={styles.loader}>Loading Please Wait</div>
       ) : (
-        <div
+        <divP
           ref={sliderRef1}
           className="keen-slider"
           style={{ position: "relative", margin: "10px 0px" }}

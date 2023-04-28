@@ -9,10 +9,10 @@ export default {
 
 const Template = (args: any) => <Footer {...args} />;
 
-export const Default = Template.bind({});
+export const Default: any = Template.bind({});
 Default.args = {};
 
-export const Colored = Template.bind({});
+export const Colored: any = Template.bind({});
 Colored.args = {
   textColor: "red",
   onClick: action("Navigate to home page"),

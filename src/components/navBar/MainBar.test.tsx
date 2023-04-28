@@ -10,3 +10,7 @@ describe("MainBar component", () => {
     expect(title).toBeInTheDocument();
   });
 });
+
+
+
+
