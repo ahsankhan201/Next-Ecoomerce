@@ -1,14 +1,11 @@
 import "keen-slider/keen-slider.min.css";
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Slider.module.scss";
+import styles from "../styles/Slider.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-const inter = Inter({ subsets: ["latin"] });
+
 
 const Slider = ({ SliderImages }: any) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -19,7 +16,7 @@ const Slider = ({ SliderImages }: any) => {
       setLoaded(true);
     },
     mode: "free-snap",
-    loop: true, // Make the slider infinite
+    loop: true,
     slides: {
       origin: "center",
       perView: 1,
@@ -46,7 +43,7 @@ const Slider = ({ SliderImages }: any) => {
         style={{ position: "relative", margin: "10px 0px" }}
       >
         {SliderImages.map((image: string, index: number) => (
-          <div key={index} className="keen-slider__slide number-slide1">
+          <div key={index} className="keen-slider__slide number-slide1 myclass">
             <img src={image} alt="image" className={styles.sliderImg} />
           </div>
         ))}

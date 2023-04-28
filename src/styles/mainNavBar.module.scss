@@ -1,53 +1,88 @@
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    height: 80px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar__list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar__item {
-    margin: 0 10px;
-    color:black;
-    font-weight: 500;
-    text-transform: capitalize;
-    text-decoration: none;
-  }
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  height: 80px;
+  padding: 0 30px;
+  font-family: "Montserrat", sans-serif;
+}
 
-  .navbar__item a{
-    margin: 0 10px;
-    color:black;
-    font-weight: 500;
-    text-transform: capitalize;
-    text-decoration: none;
-  }
+.menuContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 
-  
-  .navbar__link {
-    text-decoration: none;
-    color: #333333;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .navbar__link a{
-    text-decoration: none;
-    color: #333333;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+.menuItemWithSubmenu {
+  position: relative;
+}
 
-  .navbar__link:hover {
-    color: #e51c4a;
-  }
-  
+.menuButton {
+  background-color: transparent;
+  border: none;
+  color: #444444;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 30px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.menuButton:hover {
+  color: #ff4500;
+}
+
+.menuTitle {
+  margin: 0;
+  padding: 10px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+// .arrow span {
+//   display: block;
+//   width: 4px;
+//   height: 4px;
+//   background-color: #444444;
+//   border-radius: 50%;
+//   margin: 2px;
+// }
+
+.subMenu {
+  top: 20px !important;
+  left: 0 !important;
+  border: none !important;
+  box-shadow: 0px 2px 5px 10px rgba(0, 0, 0, 0.1) !important;
+  padding: 10px 0 !important;
+
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #444444 !important;
+  z-index: 10;
+}
+
+.subMenuTitle {
+  margin: 0;
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subMenuTitle:hover {
+  background-color: #ff4500;
+  color: #ffffff;
+}

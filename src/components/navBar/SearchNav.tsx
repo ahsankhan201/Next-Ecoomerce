@@ -5,26 +5,37 @@ import styles from "../../../src/styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
 
-const SearchNav = () => {
+const SearchNav = ({ textColor, title, fontSize, searchText }: any) => {
+  console.log("textColor", textColor);
   return (
     <>
       <div>
         <nav className={styles.navbar}>
           <div className={styles.icons}>
-            <div className={styles.favoriteHeading}>
+            <div
+              className={styles.favoriteHeading}
+              style={{ color: textColor }}
+            >
               Your Favorite Shoe Marketplace 👞 👠 👟
             </div>
           </div>
-          <div className={styles.contact}>
-            <Link href="#" className={styles.logo}>
-              Technovez
+          <div
+            className={styles.contact}
+            style={{ color: textColor, fontSize: fontSize }}
+          >
+            <Link
+              href="#"
+              className={styles.logo}
+              style={{ color: textColor, fontSize: fontSize }}
+            >
+              {title}
             </Link>
           </div>
           <div className={styles.auth}>
             <div className={styles.search_container}>
               <input
                 type="text"
-                placeholder="Search.."
+                placeholder={searchText}
                 name="search"
                 className={styles.search}
               />

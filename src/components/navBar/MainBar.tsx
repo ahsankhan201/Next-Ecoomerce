@@ -17,11 +17,11 @@ const MainBar = () => {
         </div>
         <div className={styles.contact}></div>
         <div className={styles.auth}>
-          <span className={styles.phone}>+1 (123) 456-7890</span>
-          <Link href="#" className={styles.customlink}>
+          <span className={styles.phone}>+92 3001223322</span>
+          <Link href="/user/login" className={styles.customlink}>
             Log In
           </Link>
-          <Link href="#" className={styles.customlink}>
+          <Link href="/user/register" className={styles.customlink}>
             Register
           </Link>
         </div>
