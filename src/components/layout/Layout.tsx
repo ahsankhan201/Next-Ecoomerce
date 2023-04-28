@@ -1,21 +1,38 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { FC, useState, useMemo } from "react";
 import MainBar from "../navBar/MainBar";
 import SearchNav from "../navBar/SearchNav";
 import MainNavBar from "../MainNavBar";
 import Footer from "../footer/Footer";
-import Search from "@/pages/search/Search";
+import Search from "@/components/search/Search";
 
-const Layout = ({ children }: PropsWithChildren<any>) => {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+const Layout: FC<LayoutProps> = ({ children }) => {
   const [search, setSearch] = useState<string>("");
+  const styles = useMemo(
+    () => ({
+      container: {
+        width: "90%",
+        margin: "0 auto",
+      },
+    }),
+    []
+  );
   return (
-    <div style={{ width: "90%", margin: "0 auto" }}>
+    <div style={styles.container}>
       <MainBar />
       <SearchNav search={search} setSearch={setSearch} />
       <MainNavBar />
-      {search ? <Search search={search} /> : children}
+      {search ? <Search key={search} search={search} /> : <>{children}</>}
       <Footer />
     </div>
   );
+};
+
+Layout.defaultProps = {
+  children: null,
 };
 
 export default Layout;
