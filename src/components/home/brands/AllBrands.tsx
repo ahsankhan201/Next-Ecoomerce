@@ -6,11 +6,10 @@ const AllBrands = () => {
   return (
     <>
       <h3 className={styles.eachSectionHeading}>OUR BRANDS</h3>
-
       <div className={styles.brandsContainer}>
         {brandsImages.map((item, index) => {
           return (
-            <div key={index}>
+            <div key={index} data-testid={`brand-image-${index}`}>
               <img src={item.image} alt={item.id} />
             </div>
           );
@@ -21,7 +20,7 @@ const AllBrands = () => {
       <h5 className={styles.eachSectionHeading}>
         We Know What Your Closet Needs!
       </h5>
-      <div className={styles.cardcontainer}>
+      <div className={styles.cardcontainer} data-testid={"spotlight-card"}>
         {SpotlightData.map((item: any, index: number) => {
           return <Card key={index} item={item} />;
         })}

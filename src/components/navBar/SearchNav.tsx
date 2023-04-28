@@ -5,7 +5,9 @@ import styles from "../../../src/styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
 
-const SearchNav = ({ textColor, title, fontSize, searchText }: any) => {
+const SearchNav = ({ textColor, title, fontSize, searchText ,setSearch,search}: any) => {
+
+ 
   console.log("textColor", textColor);
   return (
     <>
@@ -34,6 +36,8 @@ const SearchNav = ({ textColor, title, fontSize, searchText }: any) => {
           <div className={styles.auth}>
             <div className={styles.search_container}>
               <input
+              value={search}
+              onChange={(e)=>setSearch(e.target.value)}
                 type="text"
                 placeholder={searchText}
                 name="search"

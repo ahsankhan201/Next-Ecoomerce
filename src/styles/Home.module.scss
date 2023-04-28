@@ -39,16 +39,16 @@
 
 .cardcontainer {
   display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 38px auto;
-    width: 100%;
-    height: 100%;
-    background-color: #444444;
-    padding-bottom: 100px;
-    padding-top: 78px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 38px auto;
+  width: 100%;
+  height: 100%;
+  background-color: #444444;
+  padding-bottom: 100px;
+  padding-top: 78px;
 }
 
 .cardBnenrHeading {
@@ -64,122 +64,118 @@
   text-transform: uppercase;
 }
 
-
 .tablabels {
-    display: flex;
-   justify-content: space-around;
-   padding: 7px;
-   cursor: pointer;
-   border-bottom: 1px solid transparent;
-   font-size: 14px;
-  }
-  
-  .tablabels div {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .tablabels div.active {
-    border-color: blue;
+  display: flex;
+  justify-content: space-around;
+  padding: 7px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  font-size: 14px;
+}
 
-  }
-  
-  .tabcontent {
-    padding: 20px;
-    width:'80%';
-    margin: 0 auto;
-    border: 2px solid blue;
-  }
+.tablabels div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
 
-  .tabContainer{
-    width: 20%;
-    margin: 10px auto;
-  }
+.tablabels div.active {
+  border-color: blue;
+}
 
-  .TabsliderImg{
-    width: 85%;
+.tabcontent {
+  padding: 20px;
+  width: "80%";
+  margin: 0 auto;
+  border: 2px solid blue;
+}
+
+.tabContainer {
+  width: 20%;
+  margin: 10px auto;
+}
+
+.TabsliderImg {
+  width: 85%;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 13px 1px 0px 2px;
+}
+
+.sliderControlsPrevious1 {
+  position: absolute;
+  bottom: 6%;
+  left: 56px;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid red;
+  color: #000000;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.sliderControlsPrevious1:hover {
+  background-color: #f44336;
+}
+
+.sliderControlsNext1 {
+  position: absolute;
+  bottom: 6%;
+  right: 56px;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.sliderControlsNext1:hover {
+  background-color: #f44336;
+}
+
+.sliderImg {
+  max-width: 100%;
+  width: 100%;
+  height: 386px;
+}
+
+.fisrtSlideContainer {
+  position: relative;
+}
+
+.brandsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    width: 40%;
     height: 200px;
-    object-fit: cover;
-    box-shadow: 13px 1px 0px 2px;
-  }
 
-  .sliderControlsPrevious1 {
-    position: absolute;
-    bottom:6%;
-    left: 56px;
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: #ffffff;
-    border:2px solid red;
-    color: #000000;
-    font-size: 18px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease;
+    margin: 10px;
   }
-  
-  .sliderControlsPrevious1:hover {
-    background-color: #f44336;
-  }
-  
-  .sliderControlsNext1 {
-    position: absolute;
-   bottom:6%;
-    right: 56px;
-    transform: translateY(-50%);
-    z-index: 1;
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 18px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  }
-  
-  .sliderControlsNext1:hover {
-    background-color: #f44336;
-  }
-  
-  .sliderImg {
-    max-width: 100%;
-    width: 100%;
-    height: 386px;
-  }
-  
+}
 
-  .fisrtSlideContainer{
-    position: relative;
-  }
-  
+.eachSectionHeading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 21px 0;
+  padding-top: 17px;
+  background-color: rgba(19, 17, 30, 0.8);
+  color: white;
+}
 
-  .brandsContainer{
-    display: flex;
-    flex-wrap: wrap;
-   img {
-      width: 40%;
-      height: 200px;
-     
-      margin: 10px;
-    }
-  }
-
-  .eachSectionHeading{
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    margin: 21px 0;
-    padding-top: 17px;
-    background-color: rgba(19,17,30,0.8);
-    color: white;
-
-  }
-
-  .spotlight{
- 
-  
-  }
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -14,7 +14,11 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>{CssBaseline.flush()}</Head>
+        <Head>{CssBaseline.flush()}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-28RLEM0T57
+
+`}></script>
+        </Head>
         <body>
           <Main />
           <NextScript />

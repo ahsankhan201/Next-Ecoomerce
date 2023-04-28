@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../components/footer/Footer";
 import { action } from "@storybook/addon-actions";
 
 export default {
@@ -12,14 +12,8 @@ const Template = (args: any) => <Footer {...args} />;
 export const Default = Template.bind({});
 Default.args = {};
 
-
-
 export const Colored = Template.bind({});
 Colored.args = {
   textColor: "red",
   onClick: action("Navigate to home page"),
 };
-
-
-
-
