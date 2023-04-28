@@ -54,7 +54,7 @@
 //                       onClick={() => setImages(images.filter((img:any) => img !== image))}
 //                     >
 //                       <span className="sr-only">Remove</span>
-//                       <PlusIcon className="h-5 w-5 text-white" />
+//                   
 //                     </button>
 //                   </div>
 //                 ))}

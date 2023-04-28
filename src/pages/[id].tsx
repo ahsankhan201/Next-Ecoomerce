@@ -21,6 +21,7 @@ interface CartItem {
 }
 
 const ProductDetail = () => {
+  console.log("welocme")
   const dispatch = useDispatch();
   const router = useRouter();
   const { id } = router.query;
@@ -231,7 +232,7 @@ const ProductDetail = () => {
             </button>
           </div>
           <button
-            className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out"
+            className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out"
             onClick={() =>
               addToCardItem(
                 product.title,

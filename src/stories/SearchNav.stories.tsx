@@ -1,6 +1,8 @@
 import React,{FunctionComponent } from "react";
 import SearchNav from "../components/navBar/SearchNav";
 import { action } from "@storybook/addon-actions";
+import { useDispatch ,useSelector} from "react-redux";
+import { addToCart } from ".././slices//CartSlice";
 
 export default {
   title: "SearchNav",

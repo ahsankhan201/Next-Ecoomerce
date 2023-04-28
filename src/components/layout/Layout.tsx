@@ -6,7 +6,7 @@ import Footer from "../footer/Footer";
 import Search from "@/pages/search/Search";
 
 const Layout = ({ children }: PropsWithChildren<any>) => {
-  const [search,setSearch]=useState<string>("")
+  const [search, setSearch] = useState<string>("");
   return (
     <div style={{ width: "90%", margin: "0 auto" }}>
       <MainBar />

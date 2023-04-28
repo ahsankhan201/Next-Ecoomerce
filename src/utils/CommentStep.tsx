@@ -29,13 +29,13 @@ const CommentStep = ({ onBack, onSubmit }:any) => {
         </div>
         <div className="flex justify-between w-full  bg-white">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
+            className="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded mr-4"
             onClick={handleBackClick}
           >
             Back
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded"
             onClick={handleSubmitClick}
           >
             Submit

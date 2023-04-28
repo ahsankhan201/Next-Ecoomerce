@@ -45,7 +45,6 @@ const ProductReviews = () => {
 
   const handleSubmit = (data: any) => {
     setFormData({ ...formData, ...data });
-    console.log(formData);
     handleClose();
   };
 
@@ -83,7 +82,7 @@ const ProductReviews = () => {
           // }}
         >
           <Box
-            className="bg-white p-4 rounded-lg shadow-lg"
+            className="p-4 rounded-lg shadow-lg"
             sx={{ width: "500px", outline: "none" }}
           >
             <Typography id="modal-modal-description">Average Rating</Typography>
@@ -114,7 +113,6 @@ const ProductReviews = () => {
             className="
           bg-blue-500
           hover:bg-blue-700
-          text-white
           font-bold
           py-2
           px-4
@@ -142,7 +140,7 @@ const ProductReviews = () => {
             hideBackdrop={false}
           >
             <Box
-              className="bg-white p-4"
+              className="p-4"
               sx={{ width: "500px", outline: "none" }}
             >
               <Typography id="modal-modal-description">
@@ -175,7 +173,7 @@ const ProductReviews = () => {
             <Typography variant="h5" component="div">
               <Rating rating={3.5} />
             </Typography>
-            <Typography sx={{ mb: 1.5 }} color="white" className="mt-1 mb-1">
+            <Typography sx={{ mb: 1.5 }}  className="mt-1 mb-1">
               The order came on time and the sandal ordered fitted very well.
               The product was also reasonably good in quality
             </Typography>

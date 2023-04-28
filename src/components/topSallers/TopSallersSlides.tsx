@@ -35,19 +35,20 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {topSallerData.map((slides: any, index: number) => {
+          {topSallerData?.map((slides: any, index: number) => {
+            console.log("slides", slides);
             return (
               <Link href={`/${slides.id}`}>
                 <div key={index}>
                   <img
-                    src={slides.images[0]}
+                    src={slides?.images[0]}
                     alt="image"
                     className={styles.TabsliderImg}
                   />
                   <div className="mb-12">
-                    <p className="text-white text-center">{slides.vendor}</p>
-                    <p className="text-white text-center">{slides.title}</p>
-                    <p className="text-white text-center">Rs.{slides.price}</p>
+                    <p className="text-center">{slides?.vendor}</p>
+                    <p className="text-center">{slides?.title}</p>
+                    <p className="text-center">Rs.{slides?.price}</p>
                   </div>
                 </div>
               </Link>

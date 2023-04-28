@@ -3,12 +3,15 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { sideDataClone } from "../../constants/staticData";
 import styles from "../../styles/Home.module.scss";
+
 import Link from "next/link";
 const initialFilters: any = {
   brands: [],
   gender: [],
   sizes: [],
 };
+
+// product=>colors=>variants
 const SpecificCollections = () => {
   const router = useRouter();
   const { query } = router.query;
@@ -59,9 +62,9 @@ const SpecificCollections = () => {
                       className={styles.TabsliderImg}
                     />
                     <div className="mb-12">
-                      <p className="text-white text-center">{slides.vendor}</p>
-                      <p className="text-white text-center">{slides.title}</p>
-                      <p className="text-white text-center">
+                      <p className=" text-center">{slides.vendor}</p>
+                      <p className=" text-center">{slides.title}</p>
+                      <p className=" text-center">
                         Rs.{slides.price}
                       </p>
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Serach from './../../components/search/Serach';
+import Serach from './Serach';
 
 const Search = ({search}:any) => {
   return (

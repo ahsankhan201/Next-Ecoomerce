@@ -7,12 +7,14 @@ import {
   SliderImages,
   SliderImagesBanner,
   sideDataClone,
+  MegaDiscountDela
 } from "../constants/staticData";
 import Card from "../components/home/Card";
 import Slider from "../utils/Slider";
 import { SliderInterface } from "../interface/Interfaces";
 import MegaDiscount from "../components/megaDiscount/MegaDiscount";
 import AllBrands from "../components/home/brands/AllBrands";
+
 
 const inter = Inter({ subsets: ["latin"] });
 const TopSallers = dynamic(() => import("../components/topSallers/TopSallers"));
@@ -37,7 +39,7 @@ export default function Home() {
           })}
         </div>
         <TopSallers />
-        <MegaDiscount />
+        <MegaDiscount MegaDiscountDela={MegaDiscountDela} />
         <AllBrands />
       </main>
     </>

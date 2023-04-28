@@ -5,4 +5,8 @@ export interface SliderInterface {
 }
 
 
+export interface HomeSliderImageInterface{
+  SliderImages:string[]
+}
+
 

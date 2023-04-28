@@ -55,7 +55,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <FaChevronUp className="mr-2" />
               )}
             </p>
-            <h3 className="text-lg font-medium text-white mb-2">Brands</h3>
+            <h3 className="text-lg font-medium mb-2">Brands</h3>
           </div>
           {brandsExpanded &&
             brands.map((brand: any) => (
@@ -63,7 +63,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <input
                   id={`brand-${brand.value}`}
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out mr-3"
+                  className="form-checkbox h-4 w-4 transition duration-150 ease-in-out mr-3"
                   value={brand.value}
                   checked={filters.brands.includes(brand.value)}
                   onChange={() => handleFilters("brands", brand.value)}
@@ -76,7 +76,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor={`brand-${brand.value}`}
-                  className="ml-2 block text-sm text-white ml-3"
+                  className="ml-2 block text-sm  ml-3"
                 >
                   {brand.name}
                 </label>
@@ -93,7 +93,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
             ) : (
               <FaChevronUp className="mr-2" />
             )}
-            <h3 className="text-lg font-medium text-white mb-2">Gender</h3>
+            <h3 className="text-lg font-medium  mb-2">Gender</h3>
           </div>
           {genderExpanded && (
             <>
@@ -101,7 +101,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <input
                   id="gender-male"
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out"
+                  className="form-checkbox h-4 w-4  transition duration-150 ease-in-out"
                   value="male"
                   checked={filters.gender.includes("male")}
                   onChange={() => handleFilters("gender", "male")}
@@ -114,7 +114,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor="gender-male"
-                  className="ml-2 block text-sm text-white"
+                  className="ml-2 block text-sm "
                 >
                   Male
                 </label>
@@ -123,7 +123,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <input
                   id="gender-female"
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out"
+                  className="form-checkbox h-4 w-4  transition duration-150 ease-in-out"
                   value="female"
                   checked={filters.gender.includes("female")}
                   onChange={() => handleFilters("gender", "female")}
@@ -136,7 +136,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor="gender-female"
-                  className="ml-2 block text-sm text-white"
+                  className="ml-2 block text-sm "
                 >
                   Female
                 </label>
@@ -145,7 +145,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <input
                   id="gender-unisex"
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out"
+                  className="form-checkbox h-4 w-4  transition duration-150 ease-in-out"
                   value="unisex"
                   checked={filters.gender.includes("unisex")}
                   onChange={() => handleFilters("gender", "unisex")}
@@ -155,7 +155,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 />
                 <label
                   htmlFor="gender-unisex"
-                  className="ml-2 block text-sm text-white"
+                  className="ml-2 block text-sm "
                   style={{
                     width: "50px",
                   }}
@@ -176,7 +176,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
             ) : (
               <FaChevronUp className="mr-2" />
             )}
-            <h3 className="text-lg font-medium text-white mb-2">Sizes</h3>
+            <h3 className="text-lg font-medium  mb-2">Sizes</h3>
           </div>
           {sizesExpanded &&
             sizes.map((size: any) => (
@@ -184,7 +184,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 <input
                   id={`size-${size.value}`}
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-white transition duration-150 ease-in-out"
+                  className="form-checkbox h-4 w-4  transition duration-150 ease-in-out"
                   value={size.value}
                   checked={filters.sizes.includes(size.value)}
                   onChange={() => handleFilters("sizes", size.value)}
@@ -197,7 +197,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor={`size-${size.value}`}
-                  className="ml-2 block text-sm text-white"
+                  className="ml-2 block text-sm "
                 >
                   {size.name}
                 </label>

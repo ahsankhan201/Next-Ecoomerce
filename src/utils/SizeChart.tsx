@@ -61,7 +61,6 @@ const SizeChart = ({handleClose}:any) => {
                 </table>
               </div>{" "}
               <table className="table-auto w-full">
-                {/* add your size chart data here */}
               </table>
             </div>
   )

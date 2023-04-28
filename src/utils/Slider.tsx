@@ -3,8 +3,9 @@ import styles from "../styles/Slider.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {HomeSliderImageInterface} from '../interface/Interfaces'
 
-const Slider = ({ SliderImages }: any) => {
+const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
