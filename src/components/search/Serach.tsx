@@ -11,14 +11,14 @@ const Serach = ({ search }: any) => {
     });
   }, [search]);
 
-  const handleClick = async (e:any) => {
+  const handleClick = async (e: any) => {
     e.preventDefault();
     await router.push(`/${3}`);
   };
 
   return (
     <div>
-      <h2 >YOUR SEARCH FOR "{search}*" REVEALED THE FOLLOWING:</h2>
+      <h2>YOUR SEARCH FOR "{search}*" REVEALED THE FOLLOWING:</h2>
       <div className={styles.searchContainer}>
         {searchResult?.map((slides: any, index: number) => {
           return (

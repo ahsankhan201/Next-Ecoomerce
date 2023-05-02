@@ -14,13 +14,30 @@ import Slider from "../utils/Slider";
 import { SliderInterface } from "../interface/Interfaces";
 import MegaDiscount from "../components/megaDiscount/MegaDiscount";
 import AllBrands from "../components/home/brands/AllBrands";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "@/services/product.services";
 
 
 const inter = Inter({ subsets: ["latin"] });
 const TopSallers = dynamic(() => import("../components/topSallers/TopSallers"));
 
 
+
 export default function Home() {
+  const [ProductData,setProductData] = useState<any>([])
+
+  const getAllProductsData=async()=>{
+    const data=await getAllProducts();
+    setProductData(data);
+    console.log("allData",data)
+  }
+
+  useEffect(()=>{
+    console.log("home page")
+    getAllProductsData()
+   
+    
+  },[])
   return (
     <>
       <Head>
@@ -38,7 +55,7 @@ export default function Home() {
             return <Card key={index} item={item} />;
           })}
         </div>
-        <TopSallers />
+        <TopSallers ProductData={ProductData} />
         <MegaDiscount MegaDiscountDela={MegaDiscountDela} />
         <AllBrands />
       </main>

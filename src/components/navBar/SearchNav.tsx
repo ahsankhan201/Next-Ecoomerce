@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../../src/styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
 const SearchNav = ({
@@ -15,13 +15,13 @@ const SearchNav = ({
   setSearch,
   search,
 }: any) => {
-  
-  const [totalCard,setTotalCard]=useState<any>([])
+  const [totalCard, setTotalCard] = useState<any>([]);
   const count = useSelector((state: RootState) => state);
 
-  useEffect(()=>{
+  useEffect(() => {
     setTotalCard(count?.cart?.items);
-  },[count])
+  }, [count]);
+
   return (
     <>
       <div>

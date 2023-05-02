@@ -4,7 +4,9 @@ import { CircularProgress } from "@mui/material";
 import { menuData, topSallerData ,sideDataClone} from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
 
-const TopSallers = () => {
+
+
+const TopSallers = ({ProductData}:any) => {
   const [activeTab, setActiveTab] = useState<any>("Mens Footwear");
   const [slidesData, setSlidesData] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -41,8 +43,8 @@ const TopSallers = () => {
           ))}
         </div>
       </div>
-      {slidesData.length > 0 && (
-        <TopSallersSlides topSallerData={slidesData} activeTab={activeTab} />
+      {ProductData.length > 0 && (
+        <TopSallersSlides ProductData={ProductData} activeTab={activeTab} />
       )}
     </>
   );

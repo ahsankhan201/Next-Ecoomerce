@@ -6,14 +6,21 @@ import { CircularProgress } from "@mui/material";
 import { responsive } from "../../constants/carousalResponsive";
 import Link from "next/link";
 
-const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
+const TopSallersSlides = ({
+  topSallerData,
+  activeTab,
+  loading,
+  ProductData,
+}: any) => {
+  console.log("sssss", ProductData);
   const [loading1, setLoading] = useState(loading);
 
   return (
     <>
-      {topSallerData.length == 0 && loading1 == false ? (
+      {ProductData?.length == 0 && loading1 == false ? (
         <div className={styles.loader}>No Data Found</div>
       ) : null}
+
       {loading1 == true ? (
         <CircularProgress />
       ) : (
@@ -35,7 +42,7 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {topSallerData?.map((slides: any, index: number) => {
+          {ProductData?.map((slides: any, index: number) => {
             console.log("slides", slides);
             return (
               <Link href={`/${slides.id}`}>
@@ -46,8 +53,8 @@ const TopSallersSlides = ({ topSallerData, activeTab, loading }: any) => {
                     className={styles.TabsliderImg}
                   />
                   <div className="mb-12">
-                    <p className="text-center">{slides?.vendor}</p>
-                    <p className="text-center">{slides?.title}</p>
+                    <p className="text-center">{slides?.brand}</p>
+                    {/* <p className="text-center">{slides?.title}</p> */}
                     <p className="text-center">Rs.{slides?.price}</p>
                   </div>
                 </div>
