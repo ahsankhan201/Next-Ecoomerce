@@ -1,7 +1,7 @@
 import React, { FC, useState, useMemo } from "react";
 import MainNavBar from "../MainNavBar";
 import Footer from "../footer/footer";
-import Search from "@/components/search/Search";
+import Search from "@/components/search/search";
 import SearchBar from "../navBar/searchbar";
 import MainBar from './../navBar/mainbar';
 interface LayoutProps {

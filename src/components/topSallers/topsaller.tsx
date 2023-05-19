@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import TopSallersSlides from "./TopSallersSlides";
+import TopSallersSlides from "./topsallerslider";
 import { CircularProgress } from "@mui/material";
-import { menuData, topSallerData ,sideDataClone} from "../../constants/staticData";
+import {
+  menuData,
+  topSallerData,
+  sideDataClone,
+} from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
 
-const TopSaller = ({ProductData}:any) => {
+const TopSallers = ({ ProductData }: any) => {
   const [activeTab, setActiveTab] = useState<any>("Mens Footwear");
   const [slidesData, setSlidesData] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,7 +32,7 @@ const TopSaller = ({ProductData}:any) => {
         </div>
       )}
       <div className={styles.tabContainer}>
-    <p className={styles.eachSectionHeading}>TopSallers</p>
+        <p className={styles.eachSectionHeading}>TopSallers</p>
         <div className={styles.tablabels}>
           {menuData?.map((tab, index) => (
             <div
@@ -48,4 +52,4 @@ const TopSaller = ({ProductData}:any) => {
   );
 };
 
-export default TopSaller;
+export default TopSallers;

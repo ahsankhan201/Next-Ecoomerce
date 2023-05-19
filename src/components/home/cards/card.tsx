@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Card = ({ item }: Props) => {
-  
   const [hovered, setHovered] = useState(false);
   const handleMouseEnter = () => {
     setHovered(true);

@@ -1,10 +1,9 @@
 import Card from "../components/home/cards/card";
 import Slider from "../utils/slider";
 import { SliderInterface } from "../interface/Interfaces";
-import MegaDiscount from '../components/home/megaDiscount//megadiscount'
+import MegaDiscount from "../components/home/megaDiscount//megadiscount";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../services/product.services";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
@@ -24,6 +23,7 @@ export default function Home() {
   const [products, isproducts] = useState<any>([]);
   const getProducts = async () => {
     const data = await getAllProducts();
+    console.log(data);
     isproducts(data);
   };
 
@@ -41,12 +41,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Link href={`/collection/summer-collection-2023`}>
-          <div className={styles.fisrtSlideContainer}>
-            <Slider SliderImages={SliderImages} />
-          </div>
-        </Link>
-
+        <div className={styles.fisrtSlideContainer}>
+          <Slider SliderImages={SliderImages} />
+        </div>
         <div className={styles.cardcontainer}>
           {SliderImagesBanner.map((item: SliderInterface, index: number) => {
             return <Card key={index} item={item} />;

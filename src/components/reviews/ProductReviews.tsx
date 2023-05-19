@@ -1,14 +1,14 @@
-import Rating from "@/utils/Stars";
 import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import RatingStep from "@/utils/RatingStep";
-import CommentStep from "@/utils/CommentStep";
+import CommentStep from "@/utils/commonstep";
 import ReactStars from "react-stars";
 import { LinearProgress } from "@mui/material";
+import RatingStep from "@/utils/ratingstep";
+import Rating from "@/utils/stars";
 
 const ProductReviews = () => {
   const [open, setOpen] = useState(false);
@@ -70,16 +70,13 @@ const ProductReviews = () => {
             justifyContent: "center",
             width: "60%",
             height: "10%",
+            zIndex: 1,
           }}
           sx={style}
           open={ratingModelOpen}
           onClose={handleRatingModelClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
-          // remove the class of hidden from the backdrop to see the backdrop
-          // slots={{
-          //   backdrop: (props) => <div {...props} className=" inset-0 bg-black opacity-100 hidden" />,
-          // }}
         >
           <Box
             className="p-4 rounded-lg shadow-lg"
@@ -139,10 +136,7 @@ const ProductReviews = () => {
             aria-describedby="modal-modal-description"
             hideBackdrop={false}
           >
-            <Box
-              className="p-4"
-              sx={{ width: "500px", outline: "none" }}
-            >
+            <Box className="p-4" sx={{ width: "500px", outline: "none" }}>
               <Typography id="modal-modal-description">
                 {steps[step]}
               </Typography>
@@ -173,7 +167,7 @@ const ProductReviews = () => {
             <Typography variant="h5" component="div">
               <Rating rating={3.5} />
             </Typography>
-            <Typography sx={{ mb: 1.5 }}  className="mt-1 mb-1">
+            <Typography sx={{ mb: 1.5 }} className="mt-1 mb-1">
               The order came on time and the sandal ordered fitted very well.
               The product was also reasonably good in quality
             </Typography>

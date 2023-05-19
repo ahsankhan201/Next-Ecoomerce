@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { HomeSliderImageInterface } from "../interface/Interfaces";
+import Link from "next/link";
 
 const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
   const [loaded, setLoaded] = useState(false);
@@ -36,13 +37,17 @@ const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
       <div
         ref={sliderRef}
         className="keen-slider"
-        
         style={{ position: "relative", margin: "10px 0px" }}
       >
         {SliderImages.map((image: string, index: number) => (
-          <div key={index} className="keen-slider__slide number-slide1 myclass">
-            <img src={image} alt="image" className={styles.sliderImg} />
-          </div>
+          <Link href={`/collection/summer-collection-2023`}>
+            <div
+              key={index}
+              className="keen-slider__slide number-slide1 myclass"
+            >
+              <img src={image} alt="image" className={styles.sliderImg} />
+            </div>
+          </Link>
         ))}
       </div>
 

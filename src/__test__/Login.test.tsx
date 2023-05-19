@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Login from "../../src/pages/user/Login";
+import Login from "../pages/user/login";
 
 test("submitting the login form calls the handleSubmit function", () => {
   const handleSubmit = jest.fn();

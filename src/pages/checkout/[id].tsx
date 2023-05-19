@@ -26,6 +26,13 @@ const Checout = () => {
             <h1 className="text-lg font-semibold">{item.name}</h1>
             <h1 className="text-gray-500 text-sm">Price: ${item.price}</h1>
             <h1 className="text-gray-500 text-sm">Quantity: {item.quantity}</h1>
+
+          </div>
+          <div>
+            {/* count the total price */}
+            <h1 className="text-gray-500 text-sm">
+              Total: ${item.price * item.quantity}
+            </h1>
           </div>
           <button onClick={() => handleDelete(item.id)}>
             <RiDeleteBinLine className="text-red-500" size={20} />

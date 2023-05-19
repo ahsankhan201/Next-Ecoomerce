@@ -5,7 +5,7 @@ import styles from "./../../styles/Home.module.scss";
 import { SpotlightData, brandsImages } from "../constants/staticData";
 import Card from "../components/home/cards/card";
 import Slider from "@/utils/slider";
-import TopSaller from "../components/topSallers/topsaller";
+import TopSallers from "../components/topSallers/topsaller";
 import MegaDiscount from "../components/home/megaDiscount/MegaDiscount";
 import Brands from "../components/home/brands/brands";
 export default {

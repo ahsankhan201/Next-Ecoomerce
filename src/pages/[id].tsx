@@ -7,11 +7,11 @@ import { useRouter } from "next/router";
 import { DetailPageTabs, sideDataClone } from "../constants/staticData";
 import { useMemo, useState } from "react";
 import Tabs from "../components/home/Tabs";
-import RecentlyViewed from "@/components/recentlyviewed/RecentlyViewed";
-import ProductReviews from "@/components/reviews/ProductReviews";
-import SizeChart from "@/utils/SizeChart";
+import RecentlyViewed from "@/components/recentlyviewed/recentlyreviewed";
+import ProductReviews from "@/components/reviews/productreviews";
 import { addToCart } from "../slices/CartSlice";
 import { useDispatch } from "react-redux";
+import SizeChart from "@/utils/sizechart";
 interface CartItem {
   name: string;
   quantity: number;
@@ -257,16 +257,3 @@ export default ProductDetail;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
