@@ -1,13 +1,13 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import styles from "../../../src/styles/searchNav.module.scss";
+import styles from "../../styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
-const SearchNav = ({
+const SearchBar = ({
   textColor,
   title,
   fontSize,
@@ -86,4 +86,4 @@ const SearchNav = ({
   );
 };
 
-export default SearchNav;
+export default SearchBar;

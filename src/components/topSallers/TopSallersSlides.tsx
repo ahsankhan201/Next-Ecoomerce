@@ -1,3 +1,4 @@
+import { topSallerData } from "../../constants/staticData";
 import styles from "../../styles/Home.module.scss";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
@@ -7,7 +8,7 @@ import { responsive } from "../../constants/carousalResponsive";
 import Link from "next/link";
 
 const TopSallersSlides = ({
-  topSallerData,
+  // topSallerData,
   activeTab,
   loading,
   ProductData,
@@ -42,19 +43,19 @@ const TopSallersSlides = ({
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-          {ProductData?.map((slides: any, index: number) => {
+          {topSallerData?.map((slides: any, index: number) => {
             console.log("slides", slides);
             return (
               <Link href={`/${slides.id}`}>
                 <div key={index}>
                   <img
-                    src={slides?.images[0]}
+                    src={slides?.image}
                     alt="image"
                     className={styles.TabsliderImg}
                   />
                   <div className="mb-12">
                     <p className="text-center">{slides?.brand}</p>
-                    {/* <p className="text-center">{slides?.title}</p> */}
+                    <p className="text-center">{slides?.title}</p>
                     <p className="text-center">Rs.{slides?.price}</p>
                   </div>
                 </div>

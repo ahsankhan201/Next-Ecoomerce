@@ -9,13 +9,11 @@
   justify-content: space-between;
   justify-items: center;
   padding-bottom: 1px;
-  // background-color: rgba(12, 23, 43, 1.8);
-  // color: white;
 }
 
 .favoriteHeading {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
@@ -26,9 +24,8 @@
 
 .logo {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
-  // color: white;
 }
 
 .logo a {
@@ -102,7 +99,7 @@
 .search_container > input {
   // background-color: rgba(12, 23, 43, 1.8);
   border-radius: -22px;
-  border: 2px solid white;
+  border: 1px solid black;
 }
 
 .shoppingCart {
@@ -148,6 +145,13 @@
   justify-content: center;
   align-items: center;
   justify-items: center;
+}
 
-
+.bedge_style {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  left: -9px;
+  top: -26px;
 }

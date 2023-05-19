@@ -106,18 +106,21 @@ export const SliderImagesBanner = [
     title: "Mens Footwear",
     image:
       "https://johnlewis.scene7.com/is/image/johnlewis/mens-footwear-img1-180621",
+      url:'summer-collection-2023-men'
   },
   {
     id: "2",
     title: "Womens Footwear",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+      url:'summer-collection-2023-women'
   },
   {
     id: "3",
     title: "Kids Footwear",
     image:
       "https://thumbs.dreamstime.com/b/little-boy-trying-shoes-kids-store-little-boy-trying-shoes-kids-store-side-view-son-choosing-sneakers-supermarket-149480583.jpg",
+      url:'summer-collection-2023-kids'
   },
 ];
 
@@ -127,12 +130,14 @@ export const MegaDiscountDela = [
     title: "Shop Now",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+      url:'all-under-rs-1000'
   },
   {
     id: "2",
     title: "Shop Now",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+      url:'all-under-rs-2000'
   },
 ];
 

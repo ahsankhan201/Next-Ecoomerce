@@ -3,15 +3,13 @@ import styles from "../styles/Slider.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import {HomeSliderImageInterface} from '../interface/Interfaces'
+import { HomeSliderImageInterface } from "../interface/Interfaces";
 
 const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
   const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    created() {
-      setLoaded(true);
-    },
+    created: () => setLoaded(true),
     mode: "free-snap",
     loop: true,
     slides: {
@@ -22,21 +20,23 @@ const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
   });
 
   const handlePrevClick = () => {
-    if (instanceRef.current) {
-      instanceRef.current.prev();
+    if (slider.current) {
+      slider.current.prev();
     }
   };
 
   const handleNextClick = () => {
-    if (instanceRef.current) {
-      instanceRef.current.next();
+    if (slider.current) {
+      slider.current.next();
     }
   };
+
   return (
     <>
       <div
         ref={sliderRef}
         className="keen-slider"
+        
         style={{ position: "relative", margin: "10px 0px" }}
       >
         {SliderImages.map((image: string, index: number) => (
@@ -45,6 +45,7 @@ const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
           </div>
         ))}
       </div>
+
       {loaded && (
         <div className={styles.sliderControls}>
           <button

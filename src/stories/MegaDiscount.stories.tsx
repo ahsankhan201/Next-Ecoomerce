@@ -1,7 +1,7 @@
 import React from "react";
-import MegaDiscount from "../components/megaDiscount/MegaDiscount";
+import MegaDiscount from "../components/home/megaDiscount/MegaDiscount";
 import { MegaDiscountDela } from "../constants/staticData";
-import Card from "@/components/home/Card";
+import Card from "@/components/home/cards/card";
 export default {
   title: "MegaDiscount",
   component: MegaDiscount,

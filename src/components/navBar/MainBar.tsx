@@ -31,3 +31,24 @@ const MainBar = () => {
 };
 
 export default MainBar;
+// import React, { ReactNode } from "react";
+
+// interface MainBarProps {
+//   contact?: ReactNode;
+//   auth?: ReactNode;
+//   icons?: ReactNode;
+// }
+
+// const MainBar: React.FC<MainBarProps> = ({ contact, auth, icons }) => {
+//   return (
+//     <nav>
+//       <ul>
+//         <li>{contact}</li>
+//         <li>{auth}</li>
+//         <li>{icons}</li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default MainBar;

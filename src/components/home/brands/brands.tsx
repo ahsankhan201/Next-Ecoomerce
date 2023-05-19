@@ -1,8 +1,8 @@
 import React from "react";
 import { SpotlightData, brandsImages } from "../../../constants/staticData";
 import styles from "../../../styles/Home.module.scss";
-import Card from "../Card";
-const AllBrands = () => {
+import Card from "../cards/card";
+const Brands = () => {
   return (
     <>
       <p className={styles.eachSectionHeading}>OUR BRANDS</p>
@@ -29,4 +29,4 @@ const AllBrands = () => {
   );
 };
 
-export default AllBrands;
+export default Brands;

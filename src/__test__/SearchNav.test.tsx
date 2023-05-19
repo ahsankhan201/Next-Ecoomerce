@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react";
-import SearchNav from "../components/navBar/SearchNav";
+import SearchBar from "../components/navBar/searchbar";
 import "@testing-library/jest-dom/extend-expect";
 
-describe("SearchNav component", () => {
+describe("SearchBar component", () => {
   test("renders the search input", () => {
     const { getByPlaceholderText } = render(
-      <SearchNav searchText="Search for shoes" />
+      <SearchBar searchText="Search for shoes" />
     );
     const searchInput = getByPlaceholderText("Search for shoes");
     expect(searchInput).toBeInTheDocument();

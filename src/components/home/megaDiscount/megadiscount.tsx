@@ -1,10 +1,10 @@
 import React from "react";
-import Card from "../home/Card";
-// import { MegaDiscountDela } from "../../constants/staticData";
-import { SliderInterface } from "../../interface/Interfaces";
-import styles from "../../styles/Home.module.scss";
+import Card from "../cards/card";
+import { MegaDiscountDela } from "../../../constants/staticData";
+import { SliderInterface } from "../../../interface/Interfaces";
+import styles from "../../../styles/Home.module.scss";
 
-const MegaDiscount = ({MegaDiscountDela}:any) => {
+const MegaDiscount = ({ MegaDiscountDela }: any) => {
   return (
     <>
       <p className={styles.eachSectionHeading}>Mega Discount</p>
@@ -14,7 +14,6 @@ const MegaDiscount = ({MegaDiscountDela}:any) => {
           return <Card key={index} item={item} />;
         })}
       </div>
-     
     </>
   );
 };

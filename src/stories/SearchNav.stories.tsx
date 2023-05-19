@@ -1,9 +1,16 @@
 import React,{FunctionComponent } from "react";
-import SearchNav from "../components/navBar/SearchNav";
+import SearchNav from "../components/navBar/searchbar";
 import { action } from "@storybook/addon-actions";
 import { useDispatch ,useSelector} from "react-redux";
 import { addToCart } from ".././slices//CartSlice";
-
+interface SearchBarProps {
+  textColor: string;
+  title: string;
+  fontSize: number;
+  searchText?: string;
+  setSearch: (value: string) => void;
+  search: string;
+}
 export default {
   title: "SearchNav",
   component: SearchNav,

@@ -1,6 +1,6 @@
 import React from "react"; // Importing React library
 import { render, screen } from "@testing-library/react"; // Importing testing libraries
-import Card from "../components/home/Card"; // Importing the component to test
+import Card from "../components/home/cards/card"; // Importing the component to test
 import "@testing-library/jest-dom/extend-expect"; // Importing library to use expect statements
 
 describe("Card component", () => {

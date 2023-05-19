@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 export async function getAllProducts() {
   try {
-    const response = await axios.get('http://localhost:4000/product');
+    const response = await axios.get(Get_All_Products);
     return response.data;
   } catch (error) {
     console.error(error);

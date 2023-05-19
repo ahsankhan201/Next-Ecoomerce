@@ -1,3 +1,10 @@
+import Card from "../components/home/cards/card";
+import Slider from "../utils/slider";
+import { SliderInterface } from "../interface/Interfaces";
+import MegaDiscount from '../components/home/megaDiscount//megadiscount'
+import { useEffect, useState } from "react";
+import { getAllProducts } from "../services/product.services";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
@@ -6,38 +13,24 @@ import styles from "../styles/Home.module.scss";
 import {
   SliderImages,
   SliderImagesBanner,
-  sideDataClone,
-  MegaDiscountDela
+  MegaDiscountDela,
 } from "../constants/staticData";
-import Card from "../components/home/Card";
-import Slider from "../utils/Slider";
-import { SliderInterface } from "../interface/Interfaces";
-import MegaDiscount from "../components/megaDiscount/MegaDiscount";
-import AllBrands from "../components/home/brands/AllBrands";
-import { useEffect, useState } from "react";
-import { getAllProducts } from "@/services/product.services";
-
 
 const inter = Inter({ subsets: ["latin"] });
-const TopSallers = dynamic(() => import("../components/topSallers/TopSallers"));
-
-
+const TopSallers = dynamic(() => import("../components/topSallers/topsaller"));
+const Brands = dynamic(() => import("../components/home/brands/brands"));
 
 export default function Home() {
-  const [ProductData,setProductData] = useState<any>([])
+  const [products, isproducts] = useState<any>([]);
+  const getProducts = async () => {
+    const data = await getAllProducts();
+    isproducts(data);
+  };
 
-  const getAllProductsData=async()=>{
-    const data=await getAllProducts();
-    setProductData(data);
-    console.log("allData",data)
-  }
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-  useEffect(()=>{
-    console.log("home page")
-    getAllProductsData()
-   
-    
-  },[])
   return (
     <>
       <Head>
@@ -46,18 +39,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
-        <div className={styles.fisrtSlideContainer}>
-          <Slider SliderImages={SliderImages} />
-        </div>
+        <Link href={`/collection/summer-collection-2023`}>
+          <div className={styles.fisrtSlideContainer}>
+            <Slider SliderImages={SliderImages} />
+          </div>
+        </Link>
+
         <div className={styles.cardcontainer}>
           {SliderImagesBanner.map((item: SliderInterface, index: number) => {
             return <Card key={index} item={item} />;
           })}
         </div>
-        <TopSallers ProductData={ProductData} />
+        <TopSallers ProductData={products} />
         <MegaDiscount MegaDiscountDela={MegaDiscountDela} />
-        <AllBrands />
+        <Brands />
       </main>
     </>
   );

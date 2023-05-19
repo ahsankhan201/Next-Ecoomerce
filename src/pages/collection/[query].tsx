@@ -1,4 +1,4 @@
-import FilterationSideBar from "@/components/filterationSidebar/FilterSidebar";
+import FilterationSideBar from "@/components/filterationSidebar/filtersidebar";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { sideDataClone } from "../../constants/staticData";
@@ -11,7 +11,6 @@ const initialFilters: any = {
   sizes: [],
 };
 
-// product=>colors=>variants
 const SpecificCollections = () => {
   const router = useRouter();
   const { query } = router.query;
@@ -20,7 +19,9 @@ const SpecificCollections = () => {
 
   useEffect(() => {
     setProducts([]);
+    console.log(query);
     sideDataClone.forEach((item: any) => {
+      console.log(item);
       if (
         filters.brands.every(
           (brand: string) => brand === "" || brand === item.vendor

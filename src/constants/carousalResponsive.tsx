@@ -16,5 +16,4 @@ export const responsive = {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
-    
   };

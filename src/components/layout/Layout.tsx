@@ -1,10 +1,9 @@
 import React, { FC, useState, useMemo } from "react";
-import MainBar from "../navBar/MainBar";
-import SearchNav from "../navBar/SearchNav";
 import MainNavBar from "../MainNavBar";
-import Footer from "../footer/Footer";
+import Footer from "../footer/footer";
 import Search from "@/components/search/Search";
-
+import SearchBar from "../navBar/searchbar";
+import MainBar from './../navBar/mainbar';
 interface LayoutProps {
   children?: React.ReactNode;
 }
@@ -23,7 +22,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div style={styles.container}>
       <MainBar />
-      <SearchNav search={search} setSearch={setSearch} />
+      <SearchBar search={search} setSearch={setSearch} />
       <MainNavBar />
       {search ? <Search key={search} search={search} /> : <>{children}</>}
       <Footer />

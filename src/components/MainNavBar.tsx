@@ -21,7 +21,7 @@ const MainNavBar = () => {
   return (
     <div className={styles.navBar}>
       <div className={styles.menuContainer}>
-        {navMenu.map((menuItem: any, index: any) => (
+        {navMenu?.map((menuItem: any, index: any) => (
           <div key={menuItem.id}>
             {menuItem.subMenu ? (
               <div className={styles.menuItemWithSubmenu}>
@@ -46,7 +46,6 @@ const MainNavBar = () => {
                     "aria-labelledby": menuItem.id,
                   }}
                   className={styles.subMenu}
-                  BackdropProps={{ invisible: true }}
                 >
                   {menuItem.subMenu.map((subMenuItem: any, index: any) => (
                     <Link
