@@ -8,7 +8,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
   const [genderExpanded, setGenderExpanded] = useState<boolean>(true);
   const [sizesExpanded, setSizesExpanded] = useState<boolean>(true);
 
-  const handleFilters = (category: any, option: any) => {
+  const handleFilters = (category: string, option: string) => {
     const newFilters = { ...filters };
     const index = newFilters[category].indexOf(option);
     if (index === -1) {

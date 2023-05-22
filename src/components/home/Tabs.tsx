@@ -5,10 +5,10 @@ const Tabs = ({ DetailPageTabs, product }: any) => {
   const [activeTab, setActiveTab] = useState(0);
   const productDescription = product.description
     .replace(/<p>/g, "")
-    .replace(/<\/p>/g, ""); // Remove p tags from the product description
-  const productDetails = productDescription.split(/\.|\n/); // Split the text content by period or newline character
+    .replace(/<\/p>/g, "");
+  const productDetails = productDescription.split(/\.|\n/);
   const detailsList = productDetails.map((detail: string) => {
-    return <li>{detail.trim()}</li>; // Map each split item to a li element
+    return <li>{detail.trim()}</li>;
   });
   return (
     <>

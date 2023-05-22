@@ -7,3 +7,12 @@ export async function getAllProducts() {
     console.error(error);
   }
 }
+
+export async function getSpecifcProduct(id: string) {
+  try {
+    const response = await axios.post(Get_All_Products + `/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

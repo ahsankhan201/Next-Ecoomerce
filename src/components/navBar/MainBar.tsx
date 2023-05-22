@@ -11,7 +11,7 @@ const MainBar = () => {
           <Link href="#">
             <FaFacebook />
           </Link>
-          <Link href="#">
+          <Link href="#" className="">
             <FaInstagram />
           </Link>
         </div>

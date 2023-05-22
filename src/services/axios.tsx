@@ -7,7 +7,6 @@ axios.interceptors.request.use(function (axios_config: any) {
     axios_config.headers.token = localStorage.getItem('token')
     return axios_config;
 }, function (error) {
-    // Do something with request error
     return Promise.reject(error);
 });
 
