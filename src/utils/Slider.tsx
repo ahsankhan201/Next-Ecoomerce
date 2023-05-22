@@ -3,18 +3,14 @@ import styles from "../styles/Slider.module.scss";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { HomeSliderImageInterface } from "../interface/Interfaces";
+import Link from "next/link";
 
-
-const Slider = ({ SliderImages }: any) => {
+const Slider = ({ SliderImages }: HomeSliderImageInterface) => {
   const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    slideChanged(slider: any) {
-      // setCurrentSlide(slider.details().relativeSlide);
-    },
-    created() {
-      setLoaded(true);
-    },
+    created: () => setLoaded(true),
     mode: "free-snap",
     loop: true,
     slides: {
@@ -25,16 +21,17 @@ const Slider = ({ SliderImages }: any) => {
   });
 
   const handlePrevClick = () => {
-    if (instanceRef.current) {
-      instanceRef.current.prev();
+    if (slider.current) {
+      slider.current.prev();
     }
   };
 
   const handleNextClick = () => {
-    if (instanceRef.current) {
-      instanceRef.current.next();
+    if (slider.current) {
+      slider.current.next();
     }
   };
+
   return (
     <>
       <div
@@ -43,11 +40,17 @@ const Slider = ({ SliderImages }: any) => {
         style={{ position: "relative", margin: "10px 0px" }}
       >
         {SliderImages.map((image: string, index: number) => (
-          <div key={index} className="keen-slider__slide number-slide1 myclass">
-            <img src={image} alt="image" className={styles.sliderImg} />
-          </div>
+          <Link href={`/collection/summer-collection-2023`}>
+            <div
+              key={index}
+              className="keen-slider__slide number-slide1 myclass"
+            >
+              <img src={image} alt="image" className={styles.sliderImg} />
+            </div>
+          </Link>
         ))}
       </div>
+
       {loaded && (
         <div className={styles.sliderControls}>
           <button

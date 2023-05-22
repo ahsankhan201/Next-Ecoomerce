@@ -1,5 +1,5 @@
 import React from "react";
-import MainBar from "./MainBar";
+import MainBar from "./mainbar";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 

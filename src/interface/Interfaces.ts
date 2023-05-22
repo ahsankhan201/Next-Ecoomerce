@@ -3,3 +3,10 @@ export interface SliderInterface {
   title: string;
   id?: string;
 }
+
+
+export interface HomeSliderImageInterface{
+  SliderImages:string[]
+}
+
+

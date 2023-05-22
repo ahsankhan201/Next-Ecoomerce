@@ -11,17 +11,17 @@ const MainBar = () => {
           <Link href="#">
             <FaFacebook />
           </Link>
-          <Link href="#">
+          <Link href="#" className="">
             <FaInstagram />
           </Link>
         </div>
         <div className={styles.contact}></div>
         <div className={styles.auth}>
           <span className={styles.phone}>+92 3001223322</span>
-          <Link href="/user/login" className={styles.customlink}>
+          <Link href="/user/Login" className={styles.customlink}>
             Log In
           </Link>
-          <Link href="/user/register" className={styles.customlink}>
+          <Link href="/user/Register" className={styles.customlink}>
             Register
           </Link>
         </div>
@@ -31,3 +31,24 @@ const MainBar = () => {
 };
 
 export default MainBar;
+// import React, { ReactNode } from "react";
+
+// interface MainBarProps {
+//   contact?: ReactNode;
+//   auth?: ReactNode;
+//   icons?: ReactNode;
+// }
+
+// const MainBar: React.FC<MainBarProps> = ({ contact, auth, icons }) => {
+//   return (
+//     <nav>
+//       <ul>
+//         <li>{contact}</li>
+//         <li>{auth}</li>
+//         <li>{icons}</li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default MainBar;

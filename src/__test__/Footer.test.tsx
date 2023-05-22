@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Footer from '../../src/components/footer/Footer';
+import Footer from '../components/footer/footer';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Footer component', () => {

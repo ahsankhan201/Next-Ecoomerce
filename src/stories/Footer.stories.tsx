@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/footer";
 import { action } from "@storybook/addon-actions";
 
 export default {
