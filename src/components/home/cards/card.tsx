@@ -38,9 +38,13 @@ const Card = ({ item }: Props) => {
         )}
         <div>
           {item?.spotlight ? (
-            <div className={styles.spotlight}>
-              <p>{item.category}</p>
-              <p>{item.titleBottom}</p>
+            <div className={`${styles.cardContent} ${
+              hovered ? styles.active : ""
+            }`}>
+              <div className={styles.cardBnenrHeading}>
+              <p className="font-bold">{item.category}</p>
+              <p className="font-bold">{item.titleBottom}</p>
+              </div>
             </div>
           ) : (
             ""

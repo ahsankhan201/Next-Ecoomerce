@@ -1,4 +1,4 @@
-import FilterationSideBar from "@/components/filterationSidebar/filtersidebar";
+import FilterationSideBar from "../../components/filterationSidebar/FilterSidebar";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { sideDataClone } from "../../constants/staticData";
@@ -37,8 +37,8 @@ const SpecificCollections = () => {
 
   return (
     <>
-      <div className="flex row">
-        <div className="w-1/4  ml-5">
+      <div className="flex">
+        <div className="w-6/12 ml-5">
           <FilterationSideBar
             sideDataClone={sideDataClone}
             setFilters={setFilters}
@@ -46,13 +46,10 @@ const SpecificCollections = () => {
           />
         </div>
         <div
-          style={{
-            marginLeft: "30px",
-            color: "white",
-          }}
+          
         >
-          <p className="uppercase text-lg font-bold">{query}</p>
-          <div className="flex row flex-wrap">
+          <p className="uppercase ml-8 my-4 text-lg font-bold">{query}</p>
+          <div className="flex row justify-evenly flex-wrap">
             {products.map((slides: any, index: number) => {
               return (
                 <Link href={`/${slides.id}`}>

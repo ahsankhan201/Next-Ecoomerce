@@ -6,12 +6,11 @@
   height: 80px;
   padding: 0 30px;
   font-family: "Montserrat", sans-serif;
-}
-
-.menuContainer {
-  display: flex;
-  align-items: center;
-  height: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .menuItemWithSubmenu {
@@ -25,10 +24,10 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  margin-right: 30px;
   transition: color 0.3s;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .menuButton:hover {
@@ -37,7 +36,8 @@
 
 .menuTitle {
   margin: 0;
-  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .arrow {

@@ -9,10 +9,10 @@ const MainBar = () => {
       <nav className={styles.navbar}>
         <div className={styles.icons}>
           <Link href="#">
-            <FaFacebook />
+            <FaFacebook className="text-2xl"/>
           </Link>
-          <Link href="#" className="">
-            <FaInstagram />
+          <Link href="#" className="2">
+            <FaInstagram className="text-3xl"/>
           </Link>
         </div>
         <div className={styles.contact}></div>

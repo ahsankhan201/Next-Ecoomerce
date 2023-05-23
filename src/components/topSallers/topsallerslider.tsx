@@ -39,15 +39,15 @@ const TopSallersSlides = ({
           customTransition="all .5"
           transitionDuration={500}
           containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
           itemClass="carousel-item-padding-40-px"
         >
           {topSallerData?.map((slides: any, index: number) => {
             console.log("slides", slides);
             return (
               <Link href={`/${slides.id}`}>
-                <div key={index}>
+                <div className="p-4" key={index}>
                   <img
                     src={slides?.image}
                     alt="image"

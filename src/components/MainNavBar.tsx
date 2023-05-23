@@ -20,7 +20,7 @@ const MainNavBar = () => {
 
   return (
     <div className={styles.navBar}>
-      <div className={styles.menuContainer}>
+      <div  className="max-w-screen-xl mx-4 flex h-full w-full justify-between items-center xl:mx-auto">
         {navMenu?.map((menuItem: any, index: any) => (
           <div key={menuItem.id}>
             {menuItem.subMenu ? (

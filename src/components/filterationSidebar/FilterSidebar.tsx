@@ -38,28 +38,25 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
   return (
     <div>
       <div
-        className="border-r border-gray-200 p-4"
-        style={{
-          width: "167px",
-        }}
+        className="border-r border-gray-200 w-full p-4"
       >
-        <div className="mb-4">
+        <div className="mb-6">
           <div
-            className="flex items-center content-center cursor-pointer mb-2"
+            className="flex items-center cursor-pointer mb-2"
             onClick={() => setBrandsExpanded(!brandsExpanded)}
           >
             <p>
               {brandsExpanded ? (
-                <FaChevronDown className="mr-2" />
+                <FaChevronDown />
               ) : (
-                <FaChevronUp className="mr-2" />
+                <FaChevronUp />
               )}
             </p>
-            <h3 className="text-lg font-medium mb-2">Brands</h3>
+            <h3 className="text-lg font-bold">Brands</h3>
           </div>
           {brandsExpanded &&
             brands.map((brand: any) => (
-              <div key={brand.value} className="flex items-center mb-2">
+              <div key={brand.value} className="flex items-center">
                 <input
                   id={`brand-${brand.value}`}
                   type="checkbox"
@@ -76,24 +73,24 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor={`brand-${brand.value}`}
-                  className="ml-2 block text-sm  ml-3"
+                  className="block text-sm"
                 >
                   {brand.name}
                 </label>
               </div>
             ))}
         </div>
-        <div className="mb-4">
+        <div className="mb-6">
           <div
-            className="flex items-center"
+            className="flex items-center mb-2"
             onClick={() => setGenderExpanded(!genderExpanded)}
           >
             {genderExpanded ? (
-              <FaChevronDown className="mr-2" />
+              <FaChevronDown/>
             ) : (
-              <FaChevronUp className="mr-2" />
+              <FaChevronUp/>
             )}
-            <h3 className="text-lg font-medium  mb-2">Gender</h3>
+            <h3 className="text-lg font-bold">Gender</h3>
           </div>
           {genderExpanded && (
             <>
@@ -114,7 +111,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor="gender-male"
-                  className="ml-2 block text-sm "
+                  className="block text-sm "
                 >
                   Male
                 </label>
@@ -136,7 +133,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor="gender-female"
-                  className="ml-2 block text-sm "
+                  className="block text-sm "
                 >
                   Female
                 </label>
@@ -155,7 +152,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                 />
                 <label
                   htmlFor="gender-unisex"
-                  className="ml-2 block text-sm "
+                  className="block text-sm "
                   style={{
                     width: "50px",
                   }}
@@ -168,15 +165,15 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
         </div>
         <div>
           <div
-            className="flex items-center"
+            className="flex items-center mb-2"
             onClick={() => setSizesExpanded(!sizesExpanded)}
           >
             {sizesExpanded ? (
-              <FaChevronDown className="mr-2" />
+              <FaChevronDown />
             ) : (
-              <FaChevronUp className="mr-2" />
+              <FaChevronUp />
             )}
-            <h3 className="text-lg font-medium  mb-2">Sizes</h3>
+            <h3 className="text-lg font-bold">Sizes</h3>
           </div>
           {sizesExpanded &&
             sizes.map((size: any) => (
@@ -197,7 +194,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
                     width: "50px",
                   }}
                   htmlFor={`size-${size.value}`}
-                  className="ml-2 block text-sm "
+                  className="block text-sm "
                 >
                   {size.name}
                 </label>

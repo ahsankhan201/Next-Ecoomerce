@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <>
       <div className={styles.container}>
+        <div className="max-w-screen-xl mx-4 flex justify-between w-full xl:mx-auto">
         <div className={styles.subContainer}>
           <div className={styles.title}>LET US HELP YOU</div>
           <div className="text-black text-base">
@@ -40,6 +41,7 @@ const Footer = () => {
           <div className="text-black text-base">
             <Link href="/pages/sign-up-for-updates">SIGN UP FOR UPDATES</Link>
           </div>
+        </div>
         </div>
       </div>
     </>

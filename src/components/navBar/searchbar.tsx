@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/searchNav.module.scss";
 import { BiSearch } from "react-icons/bi";
 import { Badge } from "@nextui-org/react";
-import { useSelector } from "react-redux";
+import {useSelector} from 'react-redux'
 import { RootState } from "@/store/store";
 
 const SearchBar = ({
@@ -43,7 +43,7 @@ const SearchBar = ({
               className={styles.logo}
               style={{ color: textColor, fontSize: fontSize }}
             >
-              {title} Shoe Market
+              <p className="font-bold text-3xl">{title} Shoe Market</p>
             </Link>
           </div>
           <div className={styles.auth}>

@@ -8,10 +8,10 @@ import { DetailPageTabs, sideDataClone } from "../constants/staticData";
 import { useMemo, useState } from "react";
 import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/recentlyreviewed";
-import ProductReviews from "@/components/reviews/productreviews";
+import ProductReviews from "../components/reviews/ProductReviews";
 import { addToCart } from "../slices/CartSlice";
 import { useDispatch } from "react-redux";
-import SizeChart from "@/utils/sizechart";
+import SizeChart from "../utils/SizeChart";
 interface CartItem {
   name: string;
   quantity: number;

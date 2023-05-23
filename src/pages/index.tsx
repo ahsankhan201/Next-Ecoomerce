@@ -1,7 +1,6 @@
 import Card from "../components/home/cards/card";
 import Slider from "../utils/slider";
 import { SliderInterface } from "../interface/Interfaces";
-import MegaDiscount from "../components/home/megaDiscount//megadiscount";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../services/product.services";
 import dynamic from "next/dynamic";
@@ -9,6 +8,7 @@ import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "../styles/Home.module.scss";
+// import MegaDiscount from '../components/home/megaDiscount/megadiscount'
 import {
   SliderImages,
   SliderImagesBanner,
@@ -40,7 +40,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className="max-w-screen-xl mx-4  xl:mx-auto">
         <div className={styles.fisrtSlideContainer}>
           <Slider SliderImages={SliderImages} />
         </div>
@@ -50,7 +50,7 @@ export default function Home() {
           })}
         </div>
         <TopSallers ProductData={products} />
-        <MegaDiscount MegaDiscountDela={MegaDiscountDela} />
+        {/* <MegaDiscount MegaDiscountDela={MegaDiscountDela} /> */}
         <Brands />
       </main>
     </>

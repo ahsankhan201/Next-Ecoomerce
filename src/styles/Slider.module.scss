@@ -14,10 +14,6 @@
   transition: 0.3s ease;
 }
 
-.sliderControlsPrevious:hover {
-  background-color: #f44336;
-}
-
 .sliderControlsNext {
   position: absolute;
   top: 40%;
@@ -34,6 +30,7 @@
   transition: background-color 0.3s ease;
 }
 
+.sliderControlsPrevious:hover,
 .sliderControlsNext:hover {
   background-color: #f44336;
 }
@@ -49,6 +46,6 @@
   margin: 0 auto;
   display: block;
   border: absolute;
-  border-radius: 4%;
+  border-radius: 20px;
  
 }
