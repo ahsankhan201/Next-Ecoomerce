@@ -49,7 +49,7 @@ const SpecificCollections = () => {
           
         >
           <p className="uppercase ml-8 my-4 text-lg font-bold">{query}</p>
-          <div className="flex row justify-evenly flex-wrap">
+        <div className="flex row justify-evenly flex-wrap">
             {products.map((slides: any, index: number) => {
               return (
                 <Link href={`/${slides.id}`}>

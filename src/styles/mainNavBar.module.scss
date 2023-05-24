@@ -69,12 +69,14 @@
 
 .subMenuTitle {
   margin: 0;
-  padding: 2px 10px;
+  padding: 5px 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
+  width: 200px;
+  display: block;
+  &:hover{
+    color: white;
+    background-color: #2887ed;
+  }
 }
 
-.subMenuTitle:hover {
-  background-color: #ff4500;
-  // color: #ffffff;
-}

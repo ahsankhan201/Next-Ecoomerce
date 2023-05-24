@@ -85,10 +85,10 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="mt-3 mb-3">
+    <div className="mt-3 mb-3 max-w-screen-xl mx-4 w-full xl:mx-auto">
       <div className="flex row content-between ">
         <div className="w-1/2">
-          <img src={selectedImage} alt="image" width={400} height={500} />
+          <img src={selectedImage} alt="image" className="mx-auto w-full max-w-md"  height={500} />
           <div className="mt-4 mb-4">
             <Carousel
               focusOnSelect={true}
@@ -112,7 +112,7 @@ const ProductDetail = () => {
                 return (
                   <div
                     key={index}
-                    className="w-32 h-32"
+                    className="w-32 mx-auto h-32"
                     onClick={() => {
                       handleClick(slides);
                     }}
@@ -125,7 +125,7 @@ const ProductDetail = () => {
           </div>
           <Tabs DetailPageTabs={DetailPageTabs} product={product} />
         </div>
-        <div className="ml-3 w-2/5 mr-3">
+        <div className="ml-3 w-4/5 mr-3">
           <p className="text-lg font-serif text-center mt-2 mb-12">
             {product.title}
           </p>
@@ -232,7 +232,7 @@ const ProductDetail = () => {
             </button>
           </div>
           <button
-            className="mt-4 mb-4 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 ml-3 rounded-full transition duration-150 ease-in-out"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 block ml-auto"
             onClick={() =>
               addToCardItem(
                 product.title,
