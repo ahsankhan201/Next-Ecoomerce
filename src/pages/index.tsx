@@ -8,12 +8,12 @@ import "keen-slider/keen-slider.min.css";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "../styles/Home.module.scss";
-// import MegaDiscount from '../components/home/megaDiscount/megadiscount'
 import {
   SliderImages,
   SliderImagesBanner,
   MegaDiscountDela,
 } from "../constants/staticData";
+import MegaDiscount from "@/components/home/megaDiscount/MegaDiscount";
 
 const inter = Inter({ subsets: ["latin"] });
 const TopSallers = dynamic(() => import("../components/topSallers/topsaller"));
@@ -23,7 +23,7 @@ export default function Home() {
   const [products, isproducts] = useState<any>([]);
   const getProducts = async () => {
     const data = await getAllProducts();
-    console.log(data);
+    console.log("all products", data)
     isproducts(data);
   };
 
@@ -50,7 +50,7 @@ export default function Home() {
           })}
         </div>
         <TopSallers ProductData={products} />
-        {/* <MegaDiscount MegaDiscountDela={MegaDiscountDela} /> */}
+        <MegaDiscount MegaDiscountDela={MegaDiscountDela} />
         <Brands />
       </main>
     </>

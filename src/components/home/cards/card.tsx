@@ -26,6 +26,7 @@ const Card = ({ item }: Props) => {
         data-testid="card"
       >
         {item.spotlight ? null : (
+          
           <Link href={`/collection/${item.url}`}>
             <div
               className={`${styles.cardContent} ${

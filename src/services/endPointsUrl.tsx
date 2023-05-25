@@ -1,4 +1,4 @@
-const ApiUrl = "http://localhost:4000";
+export const ApiUrl = "http://localhost:4000";
 
 const Get_All_Products = ApiUrl + "/product";
 const Get_All_Orders = ApiUrl + "/order";

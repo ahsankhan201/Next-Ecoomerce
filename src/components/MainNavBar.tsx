@@ -20,7 +20,7 @@ const MainNavBar = () => {
 
   return (
     <div className={styles.navBar}>
-      <div  className="max-w-screen-xl mx-4 flex h-full w-full justify-between items-center xl:mx-auto">
+      <div className="max-w-screen-xl mx-4 flex h-full w-full justify-between items-center xl:mx-auto">
         {navMenu?.map((menuItem: any, index: any) => (
           <div key={menuItem.id}>
             {menuItem.subMenu ? (
@@ -32,7 +32,13 @@ const MainNavBar = () => {
                   aria-expanded={
                     openSubMenu === menuItem.id ? "true" : undefined
                   }
-                  onMouseEnter={(event) => handleSubMenuClick(event, menuItem.id)}
+                  onMouseEnter={(event) =>
+                    handleSubMenuClick(event, menuItem.id)
+                  }
+                  // onMouseOut={(event)=>handleMenuClose(
+                  //   // event.currentTarget
+
+                  // )}
                   className={styles.menuButton}
                 >
                   <div className={styles.menuTitle}>{menuItem.title}</div>

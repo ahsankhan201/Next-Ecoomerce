@@ -5,6 +5,10 @@ import { sideDataClone } from "../../constants/staticData";
 import styles from "../../styles/Home.module.scss";
 
 import Link from "next/link";
+import {
+  getAllOrdersByType,
+  getAllProducts,
+} from "@/services/product.services";
 const initialFilters: any = {
   brands: [],
   gender: [],
@@ -14,14 +18,16 @@ const initialFilters: any = {
 const SpecificCollections = () => {
   const router = useRouter();
   const { query } = router.query;
-  const [products, setProducts] = useState<any>(sideDataClone);
   const [filters, setFilters] = useState(initialFilters);
+  const [products, setProducts] = useState<any>([]);
+  const getProducts = async () => {
+    const data = await getAllOrdersByType(query);
+    setProducts(data);
+  };
 
   useEffect(() => {
-    setProducts([]);
-    console.log(query);
-    sideDataClone.forEach((item: any) => {
-      console.log(item);
+    getProducts();
+    products.forEach((item: any) => {
       if (
         filters.brands.every(
           (brand: string) => brand === "" || brand === item.vendor
@@ -33,38 +39,39 @@ const SpecificCollections = () => {
         setProducts((prevProducts: any) => [...prevProducts, item]);
       }
     });
-  }, [filters]);
+  }, [filters, query]);
 
   return (
     <>
       <div className="flex">
-        <div className="w-6/12 ml-5">
+        {/* w-6/12 ml-5 */}
+        <div style={{ width: "25%" }}>
           <FilterationSideBar
-            sideDataClone={sideDataClone}
+            sideDataClone={products}
             setFilters={setFilters}
             filters={filters}
           />
         </div>
-        <div
-          
-        >
+        <div>
           <p className="uppercase ml-8 my-4 text-lg font-bold">{query}</p>
-        <div className="flex row justify-evenly flex-wrap">
-            {products.map((slides: any, index: number) => {
+          <div className="flex row justify-evenly flex-wrap">
+            {products?.map((slides: any, index: number) => {
+              console.log(slides);
               return (
-                <Link href={`/${slides.id}`}>
+                <Link href={`/${slides._id}`}>
                   <div key={index}>
                     <img
-                      src={slides.images[0]}
+                      src={
+                        slides?.media[0]?.images[0] ||
+                        slides?.media[0]?.images[1]
+                      }
                       alt="image"
                       className={styles.TabsliderImg}
                     />
                     <div className="mb-12">
                       <p className=" text-center">{slides.vendor}</p>
                       <p className=" text-center">{slides.title}</p>
-                      <p className=" text-center">
-                        Rs.{slides.price}
-                      </p>
+                      <p className=" text-center">Rs.{slides.price}</p>
                     </div>
                   </div>
                 </Link>

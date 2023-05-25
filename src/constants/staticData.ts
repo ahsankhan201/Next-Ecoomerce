@@ -106,21 +106,21 @@ export const SliderImagesBanner = [
     title: "Mens Footwear",
     image:
       "https://johnlewis.scene7.com/is/image/johnlewis/mens-footwear-img1-180621",
-      url:'summer-collection-2023-men'
+      url:'Mens'
   },
   {
     id: "2",
     title: "Womens Footwear",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
-      url:'summer-collection-2023-women'
+      url:'Womens'
   },
   {
     id: "3",
     title: "Kids Footwear",
     image:
       "https://thumbs.dreamstime.com/b/little-boy-trying-shoes-kids-store-little-boy-trying-shoes-kids-store-side-view-son-choosing-sneakers-supermarket-149480583.jpg",
-      url:'summer-collection-2023-kids'
+      url:'Kids'
   },
 ];
 
@@ -129,14 +129,14 @@ export const MegaDiscountDela = [
     id: "1",
     title: "Shop Now",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+      "//cdn.shopify.com/s/files/1/0262/5804/7069/files/1040x1040-1K_3cf0071e-4c5f-4ac4-aa43-ad73c7769cbd_1024x1024_crop_center.jpg?v=1682482918",
       url:'all-under-rs-1000'
   },
   {
     id: "2",
     title: "Shop Now",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_fwPEUSf2LS0En3uDiuy0rmHCv8byBb6eHg&usqp=CAU",
+      "//cdn.shopify.com/s/files/1/0262/5804/7069/files/1040x1040-2K_d58e93e3-0883-4ddc-b073-92e170c11886_1024x1024_crop_center.jpg?v=1682482954",
       url:'all-under-rs-2000'
   },
 ];
@@ -569,17 +569,17 @@ export const navMenu = [
       {
         title: "MENS",
         id: "Mens",
-        link: "sale-men",
+        link: "Mens",
       },
       {
         title: "WOMENS",
         id: "Womens",
-        link: "sale-women",
+        link: "Womens",
       },
       {
         title: "KIDS",
         id: "Kids",
-        link: "sale-kids",
+        link: "kids",
       },
       {
         title: "ACCESSORIES",
@@ -595,11 +595,11 @@ export const navMenu = [
     subMenu: [
       {
         title: "MEN",
-        id: "Men",
+        id: "Mens",
       },
       {
         title: "WOMEN",
-        id: "Women",
+        id: "Womens",
       },
       {
         title: "Girls",

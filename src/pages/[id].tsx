@@ -5,13 +5,14 @@ import { Dialog } from "@mui/material";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useRouter } from "next/router";
 import { DetailPageTabs, sideDataClone } from "../constants/staticData";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Tabs from "../components/home/Tabs";
 import RecentlyViewed from "@/components/recentlyviewed/recentlyreviewed";
 import ProductReviews from "../components/reviews/ProductReviews";
 import { addToCart } from "../slices/CartSlice";
 import { useDispatch } from "react-redux";
 import SizeChart from "../utils/SizeChart";
+import { getProductDetails } from "@/services/product.services";
 interface CartItem {
   name: string;
   quantity: number;
@@ -46,11 +47,20 @@ const ProductDetail = () => {
     setOpen(true);
   };
 
+const ProductDetails = async () => {
+  const data = await getProductDetails(id);
+  console.log("all products dettaiks", data);
+  setProduct(data);
+};
+
+useEffect(() => {
+  ProductDetails();
+}, [id]);
+
   useMemo(() => {
     if (id && filteredProducts) {
-      setProduct(filteredProducts);
       setSku(filteredProducts.variants[0].sku);
-      setSelectedImage(filteredProducts.featured_image);
+      // setSelectedImage(filteredProducts.featured_image);
     } else {
       setProduct(null);
       setSku("");
@@ -108,7 +118,7 @@ const ProductDetail = () => {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              {product?.images.map((slides: any, index: number) => {
+              {product[0]?.media[0].images.map((slides: any, index: number) => {
                 return (
                   <div
                     key={index}
@@ -123,7 +133,7 @@ const ProductDetail = () => {
               })}
             </Carousel>
           </div>
-          <Tabs DetailPageTabs={DetailPageTabs} product={product} />
+          {/* <Tabs DetailPageTabs={DetailPageTabs} product={product} /> */}
         </div>
         <div className="ml-3 w-4/5 mr-3">
           <p className="text-lg font-serif text-center mt-2 mb-12">
@@ -163,7 +173,7 @@ const ProductDetail = () => {
           <h3>Colors</h3>
           <div>
             <ul className="flex row">
-              {product.variants.map((color: any, inx: number) => {
+              {/* {product.variants.map((color: any, inx: number) => {
                 return (
                   <>
                     {color?.featured_media && (
@@ -183,12 +193,12 @@ const ProductDetail = () => {
                     )}
                   </>
                 );
-              })}
+              })} */}
             </ul>
           </div>
           <div className="mb-4 mt-4">
             <ul className="flex row">
-              {product.variants.map((variant: any, idx: number) => (
+              {/* {product.variants.map((variant: any, idx: number) => (
                 <button
                   disabled={!variant.available}
                   onClick={() => setSku(variant.sku)}
@@ -203,7 +213,7 @@ const ProductDetail = () => {
                     {variant.title}
                   </li>
                 </button>
-              ))}
+              ))} */}
             </ul>
           </div>
           <div className="flex items-center space-x-2 mt-2">
@@ -247,8 +257,8 @@ const ProductDetail = () => {
           </button>
         </div>
       </div>
-      <RecentlyViewed loading1={false} topSallerData={sideDataClone} />
-      <ProductReviews />
+      {/* <RecentlyViewed loading1={false} topSallerData={sideDataClone} />
+      <ProductReviews /> */}
     </div>
   );
 };
