@@ -11,7 +11,12 @@ const RecentlyViewed = ({ topSallerData, loading1 }: any) => {
         <CircularProgress />
       ) : (
         <>
-          <p className={styles.eachSectionHeading} style={{marginBottom:'10px'}}>Recently Viewed</p>
+          <p
+            className={styles.eachSectionHeading}
+            style={{ marginBottom: "10px" }}
+          >
+            Recently Viewed
+          </p>
           <Carousel
             focusOnSelect={true}
             swipeable={true}
@@ -31,28 +36,27 @@ const RecentlyViewed = ({ topSallerData, loading1 }: any) => {
             itemClass="carousel-item-padding-40-px"
           >
             {topSallerData.map((slides: any, index: number) => {
-
               return (
                 <div key={index}>
                   <Link href={`/${slides.id}`}>
-                  <img
-                    src={slides.featured_image}
-                    alt="image"
-                    style={{
-                      width: "200px",
-                      height: "200px",
-                      objectFit: "contain",
-                      margin: "0 auto",
-                      display: "block",
-                    }}
-                  />
+                    <img
+                      src={slides.featured_image}
+                      alt="image"
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        objectFit: "contain",
+                        margin: "0 auto",
+                        display: "block",
+                      }}
+                    />
                   </Link>
                 </div>
               );
             })}
           </Carousel>
         </>
-    )}
+      )}
     </>
   );
 };

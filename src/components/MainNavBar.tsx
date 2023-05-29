@@ -32,18 +32,18 @@ const MainNavBar = () => {
                   aria-expanded={
                     openSubMenu === menuItem.id ? "true" : undefined
                   }
-                  onMouseEnter={(event) =>
+                  onClick={(event) =>
                     handleSubMenuClick(event, menuItem.id)
                   }
                   // onMouseOut={(event)=>handleMenuClose(
-                  //   // event.currentTarget
-
+                  // event.currentTarget
                   // )}
                   className={styles.menuButton}
                 >
                   <div className={styles.menuTitle}>{menuItem.title}</div>
                 </button>
                 <Menu
+                
                   id={`${menuItem.id}-menu`}
                   anchorEl={anchorEl}
                   open={openSubMenu === menuItem.id}

@@ -23,7 +23,6 @@ export default function Home() {
   const [products, isproducts] = useState<any>([]);
   const getProducts = async () => {
     const data = await getAllProducts();
-    console.log("all products", data)
     isproducts(data);
   };
 
@@ -45,7 +44,7 @@ export default function Home() {
           <Slider SliderImages={SliderImages} />
         </div>
         <div className={styles.cardcontainer}>
-          {SliderImagesBanner.map((item: SliderInterface, index: number) => {
+          {SliderImagesBanner?.map((item: SliderInterface, index: number) => {
             return <Card key={index} item={item} />;
           })}
         </div>

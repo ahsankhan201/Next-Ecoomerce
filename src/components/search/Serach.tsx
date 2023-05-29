@@ -2,7 +2,7 @@ import { sideDataClone } from "@/constants/staticData";
 import React, { useMemo } from "react";
 import styles from "./Search.module.scss";
 import { useRouter } from "next/router";
-import Link from "next/link";
+
 const Serach = ({ search }: any) => {
   const router = useRouter();
   const searchResult = useMemo(() => {
