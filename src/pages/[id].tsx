@@ -22,7 +22,6 @@ interface CartItem {
 }
 
 const ProductDetail = () => {
-  console.log("welocme")
   const dispatch = useDispatch();
   const router = useRouter();
   const { id } = router.query;
@@ -30,6 +29,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const [sku, setSku] = useState("");
+  const [size,setSize]=useState("");
   const filteredProducts = sideDataClone.filter(
     (item: any) => item.id == id
   )[0];
@@ -47,15 +47,15 @@ const ProductDetail = () => {
     setOpen(true);
   };
 
-const ProductDetails = async () => {
-  const data = await getProductDetails(id);
-  console.log("all products dettaiks", data);
-  setProduct(data);
-};
+  const ProductDetails = async () => {
+    console.log("id of useEffect=", id);
+    const data = await getProductDetails(id);
+    setProduct(data);
+  };
 
-useEffect(() => {
-  ProductDetails();
-}, [id]);
+  useEffect(() => {
+    ProductDetails();
+  }, [id]);
 
   useMemo(() => {
     if (id && filteredProducts) {
@@ -81,7 +81,8 @@ useEffect(() => {
     quantity: number,
     sku: string,
     id: string,
-    price: string
+    price: string,
+    size?:any
   ) => {
     const cartItem: CartItem = {
       name,
@@ -91,14 +92,18 @@ useEffect(() => {
       price,
     };
     dispatch(addToCart(cartItem));
-    console.log("cartItem", cartItem);
   };
 
   return (
     <div className="mt-3 mb-3 max-w-screen-xl mx-4 w-full xl:mx-auto">
       <div className="flex row content-between ">
         <div className="w-1/2">
-          <img src={selectedImage} alt="image" className="mx-auto w-full max-w-md"  height={500} />
+          <img
+            src={selectedImage}
+            alt="image"
+            className="mx-auto w-full max-w-md"
+            height={500}
+          />
           <div className="mt-4 mb-4">
             <Carousel
               focusOnSelect={true}
@@ -142,7 +147,7 @@ useEffect(() => {
           <div className="mt-3 mb-3 ">
             <div className="flex row justify-around mt-2 mb-2">
               <p className="text-sm font-serif w-64 text-left">Brand</p>
-              <p className="text-sm font-serif">{product.vendor}</p>
+              <p className="text-sm font-serif">{product[0]?.brand}</p>
             </div>
             <div className="flex row justify-around mt-2 mb-2">
               <p className="text-sm font-serif w-64 text-left">Product Code</p>
@@ -152,17 +157,17 @@ useEffect(() => {
           <p className="text-2xl font-serif mt-5 mb-3 ml-2">
             Rs.{" "}
             {product.compare_at_price == product.price ? (
-              product.price
+              product[0].price
             ) : (
               <div>
                 <span
                   className="text-red-500 line-through"
                   style={{ textDecoration: "strike" }}
                 >
-                  {product.compare_at_price}
+                  {product[0].price}
                 </span>
                 &nbsp;&nbsp;
-                <span>{product.price}</span>
+                <span>{product[0].price}</span>
               </div>
             )}
           </p>
@@ -170,35 +175,24 @@ useEffect(() => {
           <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
             <SizeChart handleClose={handleClose} />
           </Dialog>
-          <h3>Colors</h3>
-          <div>
+          <div className="flex row  justify-between">
+            <h3>Colors</h3>
             <ul className="flex row">
-              {/* {product.variants.map((color: any, inx: number) => {
+              {product[0]?.colors?.map((color: any, inx: number) => {
                 return (
                   <>
-                    {color?.featured_media && (
-                      <li key={inx} className="mr-2">
-                        <img
-                          src={color?.featured_media?.preview_image?.src}
-                          alt="image"
-                          width={50}
-                          height={50}
-                          onClick={() =>
-                            setSelectedImage(
-                              color?.featured_media?.preview_image?.src
-                            )
-                          }
-                        />
-                      </li>
-                    )}
+                    <li key={inx} className="mr-2">
+                      {color?.color_name}
+                    </li>
                   </>
                 );
-              })} */}
+              })}
             </ul>
           </div>
           <div className="mb-4 mt-4">
-            <ul className="flex row">
-              {/* {product.variants.map((variant: any, idx: number) => (
+            <ul className="flex row align-center">
+              <h3>Sizes</h3>
+              {product[0].variants.map((variant: any, idx: number) => (
                 <button
                   disabled={!variant.available}
                   onClick={() => setSku(variant.sku)}
@@ -210,10 +204,10 @@ useEffect(() => {
                   }
                 >
                   <li key={idx} className="text-sm">
-                    {variant.title}
+                    {variant.size}
                   </li>
                 </button>
-              ))} */}
+              ))}
             </ul>
           </div>
           <div className="flex items-center space-x-2 mt-2">
@@ -245,11 +239,12 @@ useEffect(() => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 block ml-auto"
             onClick={() =>
               addToCardItem(
-                product.title,
+                product[0].title,
                 quantity,
                 sku,
-                product.id,
-                product.price
+                product[0]._id,
+                product[0].price,
+              
               )
             }
           >
@@ -264,6 +259,3 @@ useEffect(() => {
 };
 
 export default ProductDetail;
-
-
-

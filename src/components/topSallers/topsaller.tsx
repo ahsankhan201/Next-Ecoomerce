@@ -1,29 +1,24 @@
 import React, { useEffect, useState } from "react";
 import TopSallersSlides from "./topsallerslider";
 import { CircularProgress } from "@mui/material";
-import {
-  menuData,
-  topSallerData,
-  sideDataClone,
-} from "../../constants/staticData";
+import { menuData, topSallerData } from "../../constants/staticData";
 import styles from "./../../styles/Home.module.scss";
+import { getAllOrdersByType } from "@/services/product.services";
 
 const TopSallers = ({ ProductData }: any) => {
-  const [activeTab, setActiveTab] = useState<any>("Mens Footwear");
-  const [slidesData, setSlidesData] = useState<any>([]);
+  const [activeTab, setActiveTab] = useState<any>(menuData[0].title);
   const [loading, setLoading] = useState<boolean>(false);
+  const [products, setProducts] = useState<any>([]);
 
-  const filterData = () => {
-    const filteredTopSallerData = sideDataClone.filter((item) => {
-      const category = item.type.toLowerCase();
-      return category.includes(activeTab.toLowerCase());
-    });
-    setSlidesData(filteredTopSallerData);
+  const filterData = async () => {
+    const data = await getAllOrdersByType(activeTab);
+    setProducts(data);
   };
 
   useEffect(() => {
     filterData();
   }, [activeTab]);
+
   return (
     <>
       {loading && (
@@ -37,8 +32,8 @@ const TopSallers = ({ ProductData }: any) => {
           {menuData?.map((tab, index) => (
             <div
               key={index}
-              className={activeTab === index ? styles.active : ""}
-              onClick={() => setActiveTab(tab.title)}
+              className={activeTab === tab.title ? styles.active : ""}
+              onClick={() => setActiveTab(tab.id)}
             >
               {tab.title}
             </div>
@@ -46,7 +41,7 @@ const TopSallers = ({ ProductData }: any) => {
         </div>
       </div>
       {topSallerData?.length > 0 && (
-        <TopSallersSlides ProductData={topSallerData} activeTab={activeTab} />
+        <TopSallersSlides ProductData={products} activeTab={activeTab} />
       )}
     </>
   );

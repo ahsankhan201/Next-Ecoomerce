@@ -42,10 +42,7 @@ function Register() {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="last-name"
-                className="block text-sm font-medium "
-              >
+              <label htmlFor="last-name" className="block text-sm font-medium ">
                 Last Name
               </label>
               <div className="mt-1">
@@ -62,10 +59,7 @@ function Register() {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium"
-              >
+              <label htmlFor="email" className="block text-sm font-medium">
                 Email address
               </label>
               <div className="mt-1">
@@ -82,10 +76,7 @@ function Register() {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium"
-              >
+              <label htmlFor="password" className="block text-sm font-medium">
                 Password
               </label>
               <div className="mt-1">

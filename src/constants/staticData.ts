@@ -7,19 +7,19 @@ const sampleImages = [
 
 export const menuData = [
   {
-    title: "Mens Footwear",
-    id: "Mens Footwear",
+    title: "Mens",
+    id: "Mens",
   },
   {
-    title: "Womens Footwear",
-    id: "Womens Footwear",
+    title: "Womens",
+    id: "Womens",
   },
   {
-    title: "Boys Footwear",
-    id: "Boys Footwear",
+    title: "Boys",
+    id: "kids",
   },
   {
-    title: "ACCESSORIES",
+    title: "Accessories",
     id: "Accessories",
   },
 ];
@@ -53,8 +53,8 @@ export const shooping = [
     title: "Womens",
   },
   {
-    id: "Kids",
-    title: "Kids",
+    id: "kids",
+    title: "kids",
   },
   {
     id: "Accessories",
@@ -80,11 +80,11 @@ export const ShopByBrand = [
 export const Accessories = [
   {
     id: "Womens Accessories",
-    title: "Womens Accessories",
+    title: "Accessories",
   },
   {
     id: "Mens Accessories",
-    title: "Mens Accessories",
+    title: "Accessories",
   },
 ];
 
@@ -120,7 +120,7 @@ export const SliderImagesBanner = [
     title: "Kids Footwear",
     image:
       "https://thumbs.dreamstime.com/b/little-boy-trying-shoes-kids-store-little-boy-trying-shoes-kids-store-side-view-son-choosing-sneakers-supermarket-149480583.jpg",
-      url:'Kids'
+      url:'kids'
   },
 ];
 
@@ -578,13 +578,13 @@ export const navMenu = [
       },
       {
         title: "KIDS",
-        id: "Kids",
+        id: "kids",
         link: "kids",
       },
       {
         title: "ACCESSORIES",
         id: "Accessories",
-        link: "sale-accessories",
+        link: "Accessories",
       },
     ],
   },

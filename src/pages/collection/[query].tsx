@@ -1,14 +1,10 @@
 import FilterationSideBar from "../../components/filterationSidebar/FilterSidebar";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { sideDataClone } from "../../constants/staticData";
 import styles from "../../styles/Home.module.scss";
-
 import Link from "next/link";
-import {
-  getAllOrdersByType,
-  getAllProducts,
-} from "@/services/product.services";
+import { getAllOrdersByType } from "@/services/product.services";
+
 const initialFilters: any = {
   brands: [],
   gender: [],
@@ -25,29 +21,34 @@ const SpecificCollections = () => {
     setProducts(data);
   };
 
+  // ) &&
+  // filters.sizes.every(
+  //   (size: string) => size === "" || item.options[0].values.includes(size)
+  // )
+
+  // useEffect(() => {
+  // }, [query]);
+  
   useEffect(() => {
     getProducts();
-    products.forEach((item: any) => {
+    products?.forEach((item: any) => {
+      console.log("item", item);
       if (
         filters.brands.every(
-          (brand: string) => brand === "" || brand === item.vendor
-        ) &&
-        filters.sizes.every(
-          (size: string) => size === "" || item.options[0].values.includes(size)
+          (brand: string) => brand == "" || brand == item.brand
         )
       ) {
         setProducts((prevProducts: any) => [...prevProducts, item]);
       }
     });
-  }, [filters, query]);
+  }, [filters,query]);
 
   return (
     <>
       <div className="flex">
-        {/* w-6/12 ml-5 */}
         <div style={{ width: "25%" }}>
           <FilterationSideBar
-            sideDataClone={products}
+            products={products}
             setFilters={setFilters}
             filters={filters}
           />
@@ -56,7 +57,6 @@ const SpecificCollections = () => {
           <p className="uppercase ml-8 my-4 text-lg font-bold">{query}</p>
           <div className="flex row justify-evenly flex-wrap">
             {products?.map((slides: any, index: number) => {
-              console.log(slides);
               return (
                 <Link href={`/${slides._id}`}>
                   <div key={index}>

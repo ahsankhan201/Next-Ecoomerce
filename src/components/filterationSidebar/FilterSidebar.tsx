@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
+const FilterationSideBar = ({ products, setFilters, filters }: any) => {
+  console.log("sideData", products);
+  const [filterData, setFilterData] = useState<any>(products);
   const [brands, setBrands] = useState<any>([]);
   const [sizes, setSizes] = useState<any>([]);
   const [brandsExpanded, setBrandsExpanded] = useState<boolean>(true);
@@ -20,38 +22,32 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
   };
 
   useEffect(() => {
+    console.log("sideDataClone", products);
+    setFilterData(products);
     const uniqueSizes: any = new Set<any>();
-    sideDataClone.forEach((item: any) => {
-      item.options[0].values.forEach((value: any) => {
-        uniqueSizes.add(value);
-      });
+    products.forEach((item: any) => {
+      console.log("item of products", item);
+      // item.values.forEach((value: any) => {
+      //   uniqueSizes.add(value);
+      // });
     });
     setSizes([...uniqueSizes].map((value) => ({ name: value, value })));
-
     const uniqueBrands: any = new Set<any>();
-    sideDataClone.forEach((item: any) => {
-      uniqueBrands.add(item.vendor);
+    filterData?.forEach((item: any) => {
+      uniqueBrands.add(item.brand);
     });
     setBrands([...uniqueBrands].map((value) => ({ name: value, value })));
-  }, []);
+  }, [products]);
 
   return (
     <div>
-      <div
-        className="border-r border-gray-200 w-full p-4"
-      >
+      <div className="border-r border-gray-200 w-full p-4">
         <div className="mb-6">
           <div
             className="flex items-center cursor-pointer mb-2"
             onClick={() => setBrandsExpanded(!brandsExpanded)}
           >
-            <p>
-              {brandsExpanded ? (
-                <FaChevronDown />
-              ) : (
-                <FaChevronUp />
-              )}
-            </p>
+            <p>{brandsExpanded ? <FaChevronDown /> : <FaChevronUp />}</p>
             <h3 className="text-lg font-bold">Brands</h3>
           </div>
           {brandsExpanded &&
@@ -85,11 +81,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
             className="flex items-center mb-2"
             onClick={() => setGenderExpanded(!genderExpanded)}
           >
-            {genderExpanded ? (
-              <FaChevronDown/>
-            ) : (
-              <FaChevronUp/>
-            )}
+            {genderExpanded ? <FaChevronDown /> : <FaChevronUp />}
             <h3 className="text-lg font-bold">Gender</h3>
           </div>
           {genderExpanded && (
@@ -168,11 +160,7 @@ const FilterationSideBar = ({ sideDataClone, setFilters, filters }: any) => {
             className="flex items-center mb-2"
             onClick={() => setSizesExpanded(!sizesExpanded)}
           >
-            {sizesExpanded ? (
-              <FaChevronDown />
-            ) : (
-              <FaChevronUp />
-            )}
+            {sizesExpanded ? <FaChevronDown /> : <FaChevronUp />}
             <h3 className="text-lg font-bold">Sizes</h3>
           </div>
           {sizesExpanded &&

@@ -26,7 +26,6 @@ const Card = ({ item }: Props) => {
         data-testid="card"
       >
         {item.spotlight ? null : (
-          
           <Link href={`/collection/${item.url}`}>
             <div
               className={`${styles.cardContent} ${
@@ -39,12 +38,14 @@ const Card = ({ item }: Props) => {
         )}
         <div>
           {item?.spotlight ? (
-            <div className={`${styles.cardContent} ${
-              hovered ? styles.active : ""
-            }`}>
+            <div
+              className={`${styles.cardContent} ${
+                hovered ? styles.active : ""
+              }`}
+            >
               <div className={styles.cardBnenrHeading}>
-              <p className="font-bold">{item.category}</p>
-              <p className="font-bold">{item.titleBottom}</p>
+                <p className="font-bold">{item.category}</p>
+                <p className="font-bold">{item.titleBottom}</p>
               </div>
             </div>
           ) : (

@@ -1,20 +1,18 @@
-import { topSallerData } from "../../constants/staticData";
 import styles from "../../styles/Home.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CircularProgress } from "@mui/material";
 import { responsive } from "../../constants/carousalResponsive";
 import Link from "next/link";
 
-const TopSallersSlides = ({
-  // topSallerData,
-  activeTab,
-  loading,
-  ProductData,
-}: any) => {
-  console.log("sssss", ProductData);
+const TopSallersSlides = ({ loading, ProductData }: any) => {
   const [loading1, setLoading] = useState(loading);
+  useEffect(() => {
+    if (ProductData?.length > 0) {
+      setLoading(false);
+    }
+  }, []);
 
   return (
     <>
@@ -28,9 +26,9 @@ const TopSallersSlides = ({
         <Carousel
           focusOnSelect={true}
           swipeable={true}
+          responsive={responsive}
           draggable={true}
           showDots={true}
-          responsive={responsive}
           ssr={true}
           infinite={true}
           autoPlay={true}
@@ -43,13 +41,12 @@ const TopSallersSlides = ({
           removeArrowOnDeviceType={["tablet", "mobile"]}
           itemClass="carousel-item-padding-40-px"
         >
-          {topSallerData?.map((slides: any, index: number) => {
-            console.log("slides", slides);
+          {ProductData?.map((slides: any, index: number) => {
             return (
-              <Link href={`/${slides.id}`}>
+              <Link href={`/${slides?._id}`}>
                 <div className="p-4" key={index}>
                   <img
-                    src={slides?.image}
+                    src={slides?.media[0].images[0]}
                     alt="image"
                     className={styles.TabsliderImg}
                   />
